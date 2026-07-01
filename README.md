@@ -1,2 +1,0 @@
-# SRIKAR-KUCHI
-portfolio
