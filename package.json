@@ -1,0 +1,33 @@
+{
+  "name": "maverick-portfolio",
+  "version": "2.0.0",
+  "description": "Premium Interactive 3D Portfolio - AI Product Builder",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "vite preview --port 3000",
+    "optimize-images": "node scripts/optimize-images.js"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "three": "^0.160.0"
+  },
+  "devDependencies": {
+    "terser": "^5.48.0",
+    "vite": "^5.0.0"
+  },
+  "keywords": [
+    "portfolio",
+    "3d",
+    "three.js",
+    "gsap",
+    "interactive",
+    "premium",
+    "ai",
+    "fintech"
+  ],
+  "author": "Srikar Kuchi",
+  "license": "MIT"
+}
