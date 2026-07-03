@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <title>Srikar Kuchi | AI Product Builder & Developer</title>
+    <meta name="description" content="Srikar Kuchi is an AI Product Builder and BCA graduate specializing in FinTech automation, custom software development, and intelligent workflow optimization.">
+    <meta name="keywords" content="Srikar Kuchi, AI Product Builder, FinTech Developer, Process Automation, BCA Graduate, CA Intermediate, Python Automation, Custom AI Solutions">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://srikar-kuchi.vercel.app/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://srikar-kuchi.vercel.app/">
+    <meta property="og:title" content="Srikar Kuchi | AI Product Builder">
+    <meta property="og:description" content="AI Product Builder & Developer specializing in FinTech automation, custom software, and intelligent workflow optimization.">
+    <meta property="og:image" content="https://srikar-kuchi.vercel.app/profile.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://srikar-kuchi.vercel.app/">
+    <meta property="twitter:title" content="Srikar Kuchi | AI Product Builder">
+    <meta property="twitter:description" content="AI Product Builder & Developer specializing in FinTech automation, custom software, and intelligent workflow optimization.">
+    <meta property="twitter:image" content="https://srikar-kuchi.vercel.app/profile.jpg">
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#a4e6ff",
+                        "primary-container": "#00d1ff",
+                        "on-primary": "#003543",
+                        "on-primary-container": "#003543",
+                        "secondary": "#c2c1ff",
+                        "secondary-container": "#3630bf",
+                        "outline": "#859399",
+                        "outline-variant": "#3c494e",
+                        "background": "#131313",
+                        "surface": "#131313",
+                        "on-surface": "#e5e2e1",
+                        "on-surface-variant": "#bbc9cf",
+                        "surface-variant": "#353534"
+                    },
+                    fontFamily: {
+                        "geist": ["Geist", "sans-serif"],
+                        "inter": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --cyan: #00d1ff;
+            --cyan-dim: #a4e6ff;
+            --glow: rgba(0, 209, 255, 0.2);
+            --glass: rgba(255,255,255,0.04);
+            --glass-border: rgba(255,255,255,0.12);
+        }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #131313;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+            line-height: 1;
+        }
+
+        /* ─── BACKGROUND CANVAS ─── */
+        #bg-wrap {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background: #000;
+            overflow: hidden;
+        }
+        #scroll-canvas {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* JS will set actual px size to cover viewport */
+        }
+        #bg-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(19,19,19,0.55) 0%,
+                rgba(19,19,19,0.45) 40%,
+                rgba(19,19,19,0.75) 80%,
+                rgba(19,19,19,0.95) 100%
+            );
+            pointer-events: none;
+        }
+
+        /* ─── GLASS ─── */
+        .glass {
+            background: var(--glass);
+            backdrop-filter: blur(20px) saturate(1.5);
+            border: 1px solid var(--glass-border);
+        }
+        .glass-strong {
+            background: rgba(255,255,255,0.07);
+            backdrop-filter: blur(32px) saturate(1.8);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-bottom-color: rgba(255,255,255,0.06);
+            border-right-color: rgba(255,255,255,0.06);
+        }
+
+        /* ─── GLOW TEXT ─── */
+        .glow-cyan { text-shadow: 0 0 30px rgba(0, 209, 255, 0.6), 0 0 60px rgba(0, 209, 255, 0.3); }
+        .glow-dot { filter: drop-shadow(0 0 6px var(--cyan)); animation: pulse-dot 2.5s ease-in-out infinite; }
+        @keyframes pulse-dot { 0%,100%{opacity:1;} 50%{opacity:0.5;} }
+
+        /* ─── NAV ─── */
+        #topnav {
+            position: fixed; top: 0; left: 50%; transform: translateX(-50%);
+            z-index: 100;
+            width: 92%; max-width: 1280px;
+            margin-top: 16px;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 12px 28px;
+            border-radius: 999px;
+            background: rgba(10,10,10,0.5);
+            backdrop-filter: blur(30px) saturate(2);
+            border: 1px solid rgba(255,255,255,0.12);
+            box-shadow: 0 0 40px rgba(0,209,255,0.08), inset 0 1px 0 rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+        #topnav .logo {
+            font-family: "Geist", sans-serif;
+            font-size: 22px; font-weight: 800;
+            letter-spacing: -0.04em;
+            color: var(--cyan-dim);
+            text-decoration: none;
+        }
+        #topnav .nav-links { display: flex; gap: 32px; align-items: center; }
+        #topnav .nav-links a {
+            font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+            color: #859399;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        #topnav .nav-links a:hover { color: var(--cyan-dim); }
+        #topnav .nav-links a.active { color: var(--cyan-dim); border-bottom: 1px solid var(--cyan-dim); padding-bottom: 1px; }
+        #topnav .hire-btn {
+            font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+            background: var(--cyan);
+            color: #003543;
+            padding: 10px 24px;
+            border-radius: 999px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 0 20px rgba(0,209,255,0.3);
+        }
+        #topnav .hire-btn:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(0,209,255,0.5); }
+
+        /* ─── SIDE NAV ─── */
+        #sidenav {
+            position: fixed; right: 20px; top: 50%; transform: translateY(-50%);
+            z-index: 50;
+            display: flex; flex-direction: column; gap: 4px;
+            padding: 16px 10px;
+            border-radius: 999px;
+            background: rgba(10,10,10,0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+        }
+        #sidenav a {
+            display: flex; flex-direction: column; align-items: center; gap: 3px;
+            color: #859399; text-decoration: none;
+            padding: 8px;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+        #sidenav a:hover { color: var(--cyan-dim); background: rgba(0,209,255,0.08); transform: translateX(-3px); }
+        #sidenav a span.label { font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+
+        /* ─── SECTIONS ─── */
+        .section { position: relative; z-index: 10; max-width: 1280px; margin: 0 auto; padding: 0 28px; }
+
+        /* ─── HERO ─── */
+        #home {
+            min-height: 100vh;
+            display: flex; align-items: center;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 8px 18px;
+            border-radius: 999px;
+            font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+            color: var(--cyan-dim);
+            margin-bottom: 28px;
+        }
+        h1.display {
+            font-family: "Geist", sans-serif;
+            font-size: clamp(48px, 7vw, 88px);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.05;
+            color: #e5e2e1;
+        }
+        .section-label {
+            font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+            color: var(--cyan-dim);
+            margin-bottom: 16px;
+            display: block;
+        }
+        h2.section-title {
+            font-family: "Geist", sans-serif;
+            font-size: clamp(36px, 5vw, 64px);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            color: #e5e2e1;
+        }
+
+        /* ─── STAT PILLS ─── */
+        .stat-pill {
+            display: flex; flex-direction: column; align-items: center;
+            padding: 16px 24px;
+            border-radius: 16px;
+            text-align: center;
+            min-width: 110px;
+        }
+        .stat-pill .val {
+            font-family: "Geist", sans-serif;
+            font-size: 28px; font-weight: 800;
+            letter-spacing: -0.04em;
+            color: var(--cyan);
+        }
+        .stat-pill .lbl {
+            font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+            color: #859399;
+            margin-top: 4px;
+        }
+
+        /* ─── SKILL BAR ─── */
+        .skill-bar-track {
+            height: 3px; background: rgba(255,255,255,0.06);
+            border-radius: 9999px; overflow: hidden; margin-top: 8px;
+        }
+        .skill-bar-fill {
+            height: 100%; border-radius: 9999px;
+            background: linear-gradient(to right, rgba(0,209,255,0.5), var(--cyan));
+            box-shadow: 0 0 10px var(--cyan);
+            transition: width 1s ease;
+        }
+
+        /* ─── PROJECT CARDS ─── */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .bento-card-wide {
+            grid-column: span 2;
+        }
+        .bento-card-tall {
+            grid-row: span 2;
+        }
+        @media (max-width: 1024px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+            .bento-card-wide {
+                grid-column: span 1;
+            }
+            .bento-card-tall {
+                grid-row: span 1;
+            }
+        }
+        .project-card {
+            border-radius: 24px;
+            padding: 32px;
+            display: flex; flex-direction: column; gap: 20px;
+            transition: all 0.4s cubic-bezier(0.23,1,0.32,1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-card::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(0,209,255,0.06) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+        .project-card:hover::before { opacity: 1; }
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0,209,255,0.3) !important;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 30px rgba(0,209,255,0.12);
+        }
+        .project-icon {
+            width: 56px; height: 56px; border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(0,209,255,0.1);
+            border: 1px solid rgba(0,209,255,0.2);
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+        .project-tag {
+            font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+            padding: 4px 12px; border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #859399;
+        }
+        .project-tag.featured { background: rgba(0,209,255,0.1); border-color: rgba(0,209,255,0.3); color: var(--cyan-dim); }
+        .btn-sm {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 18px; border-radius: 999px;
+            font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        .btn-sm.primary {
+            background: rgba(0,209,255,0.15); border: 1px solid rgba(0,209,255,0.35);
+            color: var(--cyan-dim);
+        }
+        .btn-sm.primary:hover { background: rgba(0,209,255,0.25); box-shadow: 0 0 16px rgba(0,209,255,0.25); }
+        .btn-sm.ghost {
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            color: #859399;
+        }
+        .btn-sm.ghost:hover { background: rgba(255,255,255,0.1); color: #e5e2e1; }
+
+        /* ─── TIMELINE ─── */
+        .timeline-line {
+            position: absolute; left: 15px; top: 0; bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, rgba(0,209,255,0.4), transparent);
+        }
+        .timeline-dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            background: var(--cyan); flex-shrink: 0;
+            box-shadow: 0 0 12px var(--cyan);
+            margin-top: 4px;
+        }
+
+        /* ─── CONTACT FORM ─── */
+        .form-field input, .form-field textarea, .form-field select {
+            width: 100%;
+            background: rgba(0,0,0,0.4);
+            border: 0; border-bottom: 1px solid rgba(255,255,255,0.12);
+            color: #e5e2e1;
+            padding: 14px 4px;
+            font-size: 15px; font-family: "Inter", sans-serif;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+        .form-field input::placeholder, .form-field textarea::placeholder { color: #3c494e; }
+        .form-field input:focus, .form-field textarea:focus, .form-field select:focus {
+            border-bottom-color: var(--cyan);
+        }
+        .form-field label {
+            font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+            color: #859399; display: block; margin-bottom: 4px;
+            transition: color 0.2s ease;
+        }
+        textarea { resize: none; }
+
+        /* ─── SEND BUTTON (Uiverse) ─── */
+        .uiverse-btn {
+            --primary: #00d1ff;
+            --neutral-1: #1e1e1e;
+            --neutral-2: #131313;
+            --radius: 14px;
+            cursor: pointer; border-radius: var(--radius); border: none;
+            display: flex; align-items: center; justify-content: center;
+            position: relative; transition: all 0.3s ease;
+            width: 100%; height: 64px;
+            font-size: 17px; font-weight: 700; font-family: "Geist", sans-serif;
+            color: #fff; background: transparent;
+            box-shadow: 0 0 1px 2px rgba(255,255,255,0.08), 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .uiverse-btn:hover { transform: scale(1.02); box-shadow: 0 0 2px 3px rgba(0,209,255,0.2), 0 15px 30px rgba(0,0,0,0.4); }
+        .uiverse-btn:active { transform: scale(0.99); }
+        .uiverse-btn::after {
+            content: "";
+            position: absolute; inset: 0;
+            border-radius: var(--radius);
+            border: 2px solid transparent;
+            background: linear-gradient(var(--neutral-1), var(--neutral-2)) padding-box,
+                linear-gradient(to bottom, rgba(0,209,255,0.5), rgba(0,209,255,0.1)) border-box;
+            z-index: 0; transition: all 0.4s ease;
+        }
+        .uiverse-btn:hover::after { transform: scale(1.04, 1.08); box-shadow: inset 0 -1px 3px 0 rgba(0,209,255,0.4); }
+        .uiverse-btn::before {
+            content: ""; inset: 6px 6px 6px 6px; position: absolute;
+            background: linear-gradient(to top, var(--neutral-1), var(--neutral-2));
+            border-radius: 10px; filter: blur(0.5px); z-index: 2;
+        }
+        .uiverse-btn .btn-outline {
+            position: absolute; border-radius: inherit; overflow: hidden;
+            z-index: 1; opacity: 0; transition: opacity 0.4s ease; inset: -2px -3px;
+        }
+        .uiverse-btn .btn-outline::before {
+            content: ""; position: absolute; inset: -100%;
+            background: conic-gradient(from 180deg, transparent 60%, rgba(0,209,255,0.8) 80%, transparent 100%);
+            animation: spin-btn 2s linear infinite; animation-play-state: paused;
+        }
+        @keyframes spin-btn { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
+        .uiverse-btn:hover .btn-outline { opacity: 1; }
+        .uiverse-btn:hover .btn-outline::before { animation-play-state: running; }
+        .uiverse-btn .btn-content {
+            position: relative; z-index: 5;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .uiverse-btn .btn-content .icon { display: flex; align-items: center; color: var(--cyan); }
+        .uiverse-btn .btn-content span { display: block; }
+        .uiverse-btn .btn-content p {
+            display: flex; align-items: center; gap: 1px;
+            color: var(--cyan-dim);
+        }
+        .uiverse-btn .btn-content p span {
+            display: inline-block; opacity: 0;
+            animation: letter-in 0.8s ease forwards calc(var(--i) * 0.03s);
+        }
+        @keyframes letter-in {
+            0% { opacity:0; transform: translateY(-12px); color: var(--cyan); }
+            60% { opacity:1; transform: translateY(2px); }
+            100% { opacity:1; transform: translateY(0); }
+        }
+        .uiverse-btn:hover .btn-content p span {
+            animation: wave-letter 0.5s ease forwards calc(var(--i) * 0.02s);
+        }
+        @keyframes wave-letter {
+            30% { transform: translateY(3px); color: var(--cyan); }
+            50% { transform: translateY(-2px); }
+            100% { transform: translateY(0); opacity:1; }
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            position: relative; z-index: 10;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            max-width: 1280px; margin: 0 auto;
+            padding: 40px 28px;
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 16px;
+        }
+
+        /* ─── SCROLL INDICATOR ─── */
+        .scroll-indicator {
+            position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+            display: flex; flex-direction: column; align-items: center; gap: 8px;
+            opacity: 0.5;
+            animation: bounce-hint 2s ease-in-out infinite;
+        }
+        @keyframes bounce-hint { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+        /* ─── ANIMATED FLOAT ─── */
+        @keyframes float {
+            0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)}
+        }
+
+        /* ─── SECTION DIVIDER ─── */
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
+            margin: 0 0 80px 0;
+        }
+
+        @media (max-width: 768px) {
+            #sidenav { display: none; }
+            #topnav .nav-links { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ═══ BACKGROUND CANVAS ═══ -->
+    <div id="bg-wrap">
+        <canvas id="scroll-canvas"></canvas>
+        <div id="bg-overlay"></div>
+    </div>
+
+    <!-- ═══ TOP NAV ═══ -->
+    <nav id="topnav">
+        <a href="#home" class="logo">&lt;SK/&gt;</a>
+        <div class="nav-links">
+            <a href="#about" id="nav-about">About</a>
+            <a href="#skills" id="nav-skills">Skills</a>
+            <a href="#projects" id="nav-projects">Projects</a>
+            <a href="#experience" id="nav-experience">Experience</a>
+            <a href="#contact" id="nav-contact">Contact</a>
+        </div>
+        <div style="display:flex; align-items:center; gap:16px;">
+            <a href="#contact" class="hire-btn hidden md:inline-block">Hire Me</a>
+            <!-- Hamburger Button (Mobile only) -->
+            <button id="menu-btn" class="md:hidden text-outline hover:text-primary flex items-center justify-center p-2 focus:outline-none" aria-label="Toggle Menu" style="background:none; border:none; cursor:pointer;">
+                <span class="material-symbols-outlined" style="font-size:28px;">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Overlay (hidden by default) -->
+    <div id="mobile-menu" class="fixed inset-0 z-[99] bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 transition-all duration-300 transform translate-x-full md:hidden">
+        <button id="close-menu" class="absolute top-6 right-6 text-outline hover:text-primary p-2" style="background:none; border:none; cursor:pointer;">
+            <span class="material-symbols-outlined" style="font-size:36px;">close</span>
+        </button>
+        <a href="#about" class="mobile-nav-link text-2xl font-bold tracking-wider text-outline hover:text-primary transition-colors">ABOUT</a>
+        <a href="#skills" class="mobile-nav-link text-2xl font-bold tracking-wider text-outline hover:text-primary transition-colors">SKILLS</a>
+        <a href="#projects" class="mobile-nav-link text-2xl font-bold tracking-wider text-outline hover:text-primary transition-colors">PROJECTS</a>
+        <a href="#experience" class="mobile-nav-link text-2xl font-bold tracking-wider text-outline hover:text-primary transition-colors">EXPERIENCE</a>
+        <a href="#contact" class="mobile-nav-link text-2xl font-bold tracking-wider text-outline hover:text-primary transition-colors">CONTACT</a>
+        <a href="#contact" class="mobile-nav-link hire-btn mt-4 text-base font-bold px-8 py-3 bg-primary-container text-on-primary rounded-full">Hire Me</a>
+    </div>
+
+    <!-- ═══ SIDE NAV ═══ -->
+    <aside id="sidenav">
+        <a href="https://github.com/SK0705" target="_blank">
+            <span class="material-symbols-outlined" style="font-size:20px">code</span>
+            <span class="label">Git</span>
+        </a>
+        <a href="https://linkedin.com/in/sk1377" target="_blank">
+            <span class="material-symbols-outlined" style="font-size:20px">link</span>
+            <span class="label">In</span>
+        </a>
+        <a href="mailto:kuchisrikar05@gmail.com">
+            <span class="material-symbols-outlined" style="font-size:20px">mail</span>
+            <span class="label">Mail</span>
+        </a>
+    </aside>
+
+    <!-- ═══ MAIN ═══ -->
+    <main>
+
+        <!-- ─── HERO ─── -->
+        <section id="home" class="section" style="padding-top: 120px; padding-bottom: 80px;">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center" style="min-height: calc(100vh - 200px);">
+                <!-- Left: Text -->
+                <div>
+                    <div class="hero-badge glass">
+                        <span class="glow-dot" style="width:8px;height:8px;border-radius:50%;background:var(--cyan);display:inline-block;"></span>
+                        Building at the edge of Finance × AI
+                    </div>
+                    <h1 class="display">Hi, I'm<br/><span class="glow-cyan" style="color:var(--cyan);">Srikar Kuchi</span></h1>
+                    <p style="font-size:18px; color:#bbc9cf; line-height:1.7; margin:24px 0 36px; max-width:480px;">
+                        AI Product Builder &mdash; BCA Graduate &amp; CA Intermediate.<br/>
+                        Crafting intelligent software at the intersection of Finance, Automation and Technology.
+                    </p>
+                    <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:48px;">
+                        <a href="#projects" class="btn-sm primary" style="padding:14px 28px; font-size:12px;">
+                            <span class="material-symbols-outlined" style="font-size:16px">grid_view</span> View Projects
+                        </a>
+                        <a href="#contact" class="btn-sm ghost" style="padding:14px 28px; font-size:12px;">
+                            <span class="material-symbols-outlined" style="font-size:16px">send</span> Let's Talk
+                        </a>
+                    </div>
+                    <!-- Stats -->
+                    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                        <div class="stat-pill glass">
+                            <span class="val">7.95</span>
+                            <span class="lbl">BCA CGPA</span>
+                        </div>
+                        <div class="stat-pill glass">
+                            <span class="val">4+</span>
+                            <span class="lbl">Products Built</span>
+                        </div>
+                        <div class="stat-pill glass">
+                            <span class="val">AI</span>
+                            <span class="lbl">Powered Dev</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Floating Visual -->
+                <div style="display:flex; justify-content:center; align-items:center; position:relative; height:500px;">
+                    <!-- Rings -->
+                    <div style="position:absolute; width:320px; height:320px; border-radius:50%; border:1px solid rgba(0,209,255,0.12); animation: float 6s ease-in-out infinite;"></div>
+                    <div style="position:absolute; width:420px; height:420px; border-radius:50%; border:1px solid rgba(0,209,255,0.06); animation: float 6s ease-in-out infinite; animation-delay: 1s;"></div>
+                    <div style="position:absolute; width:220px; height:220px; border-radius:50%; border:1px solid rgba(0,209,255,0.2); animation: float 4s ease-in-out infinite; animation-delay:0.5s;"></div>
+                    <!-- Center Icon -->
+                    <span class="material-symbols-outlined" style="font-size:100px; color:var(--cyan); filter:drop-shadow(0 0 40px rgba(0,209,255,0.8)); position:relative; z-index:2;">robot_2</span>
+                    <!-- Floating Cards -->
+                    <div class="glass" style="position:absolute; top:60px; right:20px; padding:16px 20px; border-radius:16px; min-width:160px; animation:float 5s ease-in-out infinite;">
+                        <div style="font-size:10px; color:#859399; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Latest Project</div>
+                        <div style="font-size:14px; font-weight:700; font-family:'Geist',sans-serif; color:var(--cyan-dim);">FinMatrix</div>
+                        <div style="font-size:11px; color:#859399;">AI Finance Platform</div>
+                    </div>
+                    <div class="glass" style="position:absolute; bottom:80px; left:20px; padding:16px 20px; border-radius:16px; min-width:160px; animation:float 5s ease-in-out infinite; animation-delay:2s;">
+                        <div style="font-size:10px; color:#859399; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Status</div>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <span style="width:8px;height:8px;border-radius:50%;background:#00e676;box-shadow:0 0 8px #00e676;display:inline-block;"></span>
+                            <span style="font-size:13px; font-weight:600; color:#e5e2e1;">Open for Work</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Scroll Hint -->
+            <div class="scroll-indicator">
+                <span style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#859399;">Scroll</span>
+                <span class="material-symbols-outlined" style="font-size:20px;color:#859399;">expand_more</span>
+            </div>
+        </section>
+
+        <!-- ─── ABOUT ─── -->
+        <div style="height:60px;"></div>
+        <div class="divider"></div>
+
+        <section id="about" class="section" style="padding-bottom:100px;">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+                <!-- Left: Sticky Card -->
+                <div style="position:sticky; top:120px;">
+                    <div class="glass-strong" style="border-radius:24px; padding:32px; margin-bottom:20px;">
+                        <div style="width:100%; aspect-ratio: 3/4; border-radius:20px; margin-bottom:24px; position:relative; overflow:hidden; border:2px solid rgba(0,209,255,0.3); box-shadow: 0 0 50px rgba(0,209,255,0.2), 0 20px 60px rgba(0,0,0,0.6);">
+                            <img src="profile.jpg?v=2" alt="Srikar Kuchi" style="width:100%; height:100%; object-fit:cover; object-position: center 15%; display:block; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/>
+                            <div style="position:absolute; inset:0; background:linear-gradient(to bottom, transparent 55%, rgba(19,19,19,0.85) 100%); pointer-events:none;"></div>
+                            <!-- Name overlay at bottom of image -->
+                            <div style="position:absolute; bottom:0; left:0; right:0; padding:20px; pointer-events:none;">
+                                <div style="font-family:'Geist',sans-serif; font-size:18px; font-weight:800; letter-spacing:-0.02em; color:#e5e2e1;">Srikar Kuchi</div>
+                                <div style="font-size:11px; color:var(--cyan-dim); letter-spacing:0.1em; text-transform:uppercase; margin-top:2px;">AI Product Builder</div>
+                            </div>
+                        </div>
+                        <h3 style="font-family:'Geist',sans-serif;font-size:24px;font-weight:700;letter-spacing:-0.02em;color:var(--cyan-dim);margin-bottom:6px;">Srikar Kuchi</h3>
+                        <p style="font-size:13px;color:#859399;margin-bottom:24px;">AI Product Builder · BCA · CA Intermediate</p>
+                        <div class="glass" style="padding:16px; border-radius:14px;">
+                            <p style="font-size:13px;color:#bbc9cf;line-height:1.7;font-style:italic;">"Technology should simplify business. I combine finance, AI and automation to build products that help people work smarter."</p>
+                        </div>
+                    </div>
+                    <!-- Social Links -->
+                    <div style="display:flex; gap:10px;">
+                        <a href="https://github.com/SK0705" target="_blank" class="btn-sm ghost" style="flex:1;justify-content:center;">
+                            <span class="material-symbols-outlined" style="font-size:16px">code</span> GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/sk1377" target="_blank" class="btn-sm ghost" style="flex:1;justify-content:center;">
+                            <span class="material-symbols-outlined" style="font-size:16px">link</span> LinkedIn
+                        </a>
+                    </div>
+                </div>
+                <!-- Right: Text -->
+                <div>
+                    <span class="section-label">Professional Identity</span>
+                    <h2 class="section-title" style="margin-bottom:32px;">Who <span style="color:var(--cyan);">I Am</span></h2>
+                    <div style="display:flex; flex-direction:column; gap:20px; color:#bbc9cf; font-size:16px; line-height:1.75;">
+                        <p>I am a <strong style="color:#e5e2e1;">Bachelor of Computer Applications (BCA) graduate</strong> with a CGPA of 7.95, currently pursuing <strong style="color:#e5e2e1;">CA Intermediate</strong>. My passion lies in combining financial knowledge with artificial intelligence to build practical solutions.</p>
+                        <p>I believe the future belongs to professionals who understand both <strong style="color:var(--cyan-dim);">Finance and Technology</strong>. I use AI-assisted development to transform business ideas into functional, scalable digital products.</p>
+                        <p>My strengths lie in understanding business problems, designing elegant solutions, and continuously learning new technologies at a rapid pace.</p>
+                    </div>
+                    <!-- Education / Certs -->
+                    <div style="margin-top:40px; display:flex; flex-direction:column; gap:14px;">
+                        <div class="glass" style="border-radius:14px; padding:18px 22px; display:flex; align-items:center; gap:16px;">
+                            <span class="material-symbols-outlined" style="color:var(--cyan); font-size:24px;">school</span>
+                            <div>
+                                <div style="font-size:14px; font-weight:600; color:#e5e2e1;">Bachelor of Computer Applications</div>
+                                <div style="font-size:12px; color:#859399; margin-top:2px;">CGPA: 7.95 &nbsp;·&nbsp; 2022–2025</div>
+                            </div>
+                        </div>
+                        <div class="glass" style="border-radius:14px; padding:18px 22px; display:flex; align-items:center; gap:16px;">
+                            <span class="material-symbols-outlined" style="color:var(--cyan); font-size:24px;">calculate</span>
+                            <div>
+                                <div style="font-size:14px; font-weight:600; color:#e5e2e1;">CA Intermediate</div>
+                                <div style="font-size:12px; color:#859399; margin-top:2px;">Institute of Chartered Accountants of India &nbsp;·&nbsp; In Progress</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── SKILLS ─── -->
+        <div class="divider"></div>
+        <section id="skills" class="section" style="padding-bottom:100px;">
+            <span class="section-label">Capability Matrix</span>
+            <h2 class="section-title" style="margin-bottom:56px;">Tech <span style="color:var(--cyan);">Stack</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Core Languages -->
+                <div class="glass-strong" style="border-radius:20px; padding:28px;">
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+                        <span class="material-symbols-outlined" style="color:var(--cyan);">terminal</span>
+                        <span style="font-family:'Geist',sans-serif; font-size:16px; font-weight:700;">Core Languages</span>
+                    </div>
+                    <div style="display:flex; flex-direction:column; gap:20px;">
+                        <div>
+                            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                                <span style="font-size:14px; font-weight:600; color:#e5e2e1;">Python</span>
+                                <span style="font-size:12px; color:var(--cyan); font-family:'Geist',sans-serif;">85%</span>
+                            </div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill" style="width:85%"></div></div>
+                        </div>
+                        <div>
+                            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                                <span style="font-size:14px; font-weight:600; color:#e5e2e1;">JavaScript / HTML / CSS</span>
+                                <span style="font-size:12px; color:var(--cyan); font-family:'Geist',sans-serif;">80%</span>
+                            </div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Domain -->
+                <div class="glass-strong" style="border-radius:20px; padding:28px; margin-top:30px;">
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+                        <span class="material-symbols-outlined" style="color:var(--cyan);">analytics</span>
+                        <span style="font-family:'Geist',sans-serif; font-size:16px; font-weight:700;">Domain Expertise</span>
+                    </div>
+                    <div style="display:flex; flex-direction:column; gap:20px;">
+                        <div>
+                            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                                <span style="font-size:14px; font-weight:600; color:#e5e2e1;">FinTech &amp; Finance</span>
+                                <span style="font-size:12px; color:var(--cyan); font-family:'Geist',sans-serif;">95%</span>
+                            </div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill" style="width:95%"></div></div>
+                        </div>
+                        <div>
+                            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                                <span style="font-size:14px; font-weight:600; color:#e5e2e1;">Process Optimization</span>
+                                <span style="font-size:12px; color:var(--cyan); font-family:'Geist',sans-serif;">90%</span>
+                            </div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- AI -->
+                <div class="glass-strong" style="border-radius:20px; padding:28px;">
+                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+                        <span class="material-symbols-outlined" style="color:var(--cyan);">psychology</span>
+                        <span style="font-family:'Geist',sans-serif; font-size:16px; font-weight:700;">AI &amp; Intelligence</span>
+                    </div>
+                    <div style="display:flex; flex-direction:column; gap:20px;">
+                        <div>
+                            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                                <span style="font-size:14px; font-weight:600; color:#e5e2e1;">AI / ML Automation</span>
+                                <span style="font-size:12px; color:var(--cyan); font-family:'Geist',sans-serif;">92%</span>
+                            </div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill" style="width:92%"></div></div>
+                        </div>
+                        <div>
+                            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                                <span style="font-size:14px; font-weight:600; color:var(--cyan-dim);">AI-Assisted Dev</span>
+                                <span style="font-size:12px; color:var(--cyan); font-family:'Geist',sans-serif;">95%</span>
+                            </div>
+                            <div class="skill-bar-track"><div class="skill-bar-fill" style="width:95%; background:linear-gradient(to right, rgba(164,230,255,0.5), var(--cyan-dim));"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bento Tags -->
+            <div style="margin-top:24px; display:flex; flex-wrap:wrap; gap:10px;">
+                <span class="project-tag" style="padding:8px 18px; font-size:11px;">Python</span>
+                <span class="project-tag" style="padding:8px 18px; font-size:11px;">FastAPI</span>
+                <span class="project-tag" style="padding:8px 18px; font-size:11px;">HTML/CSS/JS</span>
+                <span class="project-tag" style="padding:8px 18px; font-size:11px;">Automation</span>
+                <span class="project-tag" style="padding:8px 18px; font-size:11px;">FinTech</span>
+                <span class="project-tag" style="padding:8px 18px; font-size:11px;">Data Analytics</span>
+                <span class="project-tag featured" style="padding:8px 18px; font-size:11px;">AI Product Builder</span>
+            </div>
+        </section>
+
+        <!-- ─── PROJECTS ─── -->
+        <div class="divider"></div>
+        <section id="projects" class="section" style="padding-bottom:100px;">
+            <span class="section-label">Portfolio Archive</span>
+            <h2 class="section-title" style="margin-bottom:12px;">What I <span style="color:var(--cyan);">Build</span></h2>
+            <p style="color:#859399; font-size:16px; margin-bottom:48px; max-width:500px;">Turning ambitious ideas at the intersection of finance and AI into real, working products.</p>
+
+            <!-- Bento Grid -->
+            <div class="bento-grid">
+
+                <!-- FinMatrix — Wide Featured Card -->
+                <div class="project-card glass-strong bento-card-wide" style="border-radius:24px; padding:0; overflow:hidden; flex-direction:column;">
+                    <!-- Accent header band -->
+                    <div style="height:5px; background:linear-gradient(to right, var(--cyan), var(--cyan-dim), transparent);"></div>
+                    <div style="padding:32px 36px; display:flex; flex-direction:column; gap:20px; height:100%;">
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                            <div style="display:flex; flex-direction:column; gap:12px;">
+                                <div style="width:52px;height:52px;border-radius:14px;background:rgba(0,209,255,0.12);border:1px solid rgba(0,209,255,0.25);display:flex;align-items:center;justify-content:center;">
+                                    <span class="material-symbols-outlined" style="color:var(--cyan);font-size:26px;">account_balance</span>
+                                </div>
+                                <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                    <span class="project-tag featured">Flagship</span>
+                                    <span class="project-tag">Finance</span>
+                                    <span class="project-tag">AI</span>
+                                </div>
+                            </div>
+                            <div style="font-size:80px;line-height:1;font-family:'Geist',sans-serif;font-weight:800;color:rgba(0,209,255,0.06);letter-spacing:-0.04em;user-select:none;">01</div>
+                        </div>
+                        <div>
+                            <h3 style="font-family:'Geist',sans-serif;font-size:30px;font-weight:800;letter-spacing:-0.03em;color:#e5e2e1;margin-bottom:10px;">FinMatrix</h3>
+                            <p style="color:#859399;font-size:14px;line-height:1.8;margin-bottom:24px;">An AI-powered financial statement platform automating Balance Sheets, P&amp;L Statements, and Cash Flow analysis — end-to-end financial reporting at scale.</p>
+                            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                                <a href="https://finamtrix-mvp.vercel.app/" target="_blank" class="btn-sm primary"><span class="material-symbols-outlined" style="font-size:14px">rocket_launch</span> Live Demo</a>
+                                <a href="https://github.com/SK0705/finamtrix_mvp" target="_blank" class="btn-sm ghost"><span class="material-symbols-outlined" style="font-size:14px">code</span> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maverick OS — Tall Side Card -->
+                <div class="project-card glass-strong bento-card-tall" style="border-radius:24px; padding:0; overflow:hidden; flex-direction:column;">
+                    <div style="height:5px; background:linear-gradient(to right, rgba(194,193,255,0.8), transparent);"></div>
+                    <div style="padding:28px; display:flex; flex-direction:column; gap:16px; height:100%;">
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                            <div style="width:48px;height:48px;border-radius:14px;background:rgba(194,193,255,0.1);border:1px solid rgba(194,193,255,0.2);display:flex;align-items:center;justify-content:center;">
+                                <span class="material-symbols-outlined" style="color:var(--secondary,#c2c1ff);font-size:24px;">desktop_windows</span>
+                            </div>
+                            <div style="font-size:60px;line-height:1;font-family:'Geist',sans-serif;font-weight:800;color:rgba(194,193,255,0.06);letter-spacing:-0.04em;user-select:none;">02</div>
+                        </div>
+                        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                            <span class="project-tag">Desktop</span>
+                            <span class="project-tag">Assistant</span>
+                        </div>
+                        <div style="flex:1;">
+                            <h3 style="font-family:'Geist',sans-serif;font-size:22px;font-weight:800;letter-spacing:-0.02em;color:#e5e2e1;margin-bottom:10px;">Maverick</h3>
+                            <p style="color:#859399;font-size:13px;line-height:1.8;margin-bottom:20px;">A futuristic AI-powered desktop command center designed for productivity, automation, AI assistants, and business workflows.</p>
+                        </div>
+                        <!-- Preview visual -->
+                        <div style="border-radius:12px;background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.06);padding:16px;margin-bottom:16px;">
+                            <div style="display:flex;gap:6px;margin-bottom:10px;">
+                                <div style="width:8px;height:8px;border-radius:50%;background:#ff5f57;"></div>
+                                <div style="width:8px;height:8px;border-radius:50%;background:#febc2e;"></div>
+                                <div style="width:8px;height:8px;border-radius:50%;background:#28c840;"></div>
+                            </div>
+                            <div style="font-family:monospace;font-size:11px;color:#859399;line-height:1.8;">
+                                <div><span style="color:var(--cyan);">▸</span> Maverick OS v1.0</div>
+                                <div><span style="color:#28c840;">✓</span> AI Core loaded</div>
+                                <div><span style="color:#febc2e;">⟳</span> Full release soon...</div>
+                            </div>
+                        </div>
+                        <div style="display:flex;flex-direction:column;gap:8px;">
+                            <a href="http://localhost:8000" target="_blank" class="btn-sm primary" style="justify-content:center;"><span class="material-symbols-outlined" style="font-size:14px">play_circle</span> Scroll Demo</a>
+                            <span class="project-tag" style="text-align:center;padding:8px;opacity:0.5;">Full Release Soon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INDRA -->
+                <div class="project-card glass-strong" style="border-radius:24px; padding:0; overflow:hidden; flex-direction:column;">
+                    <div style="height:5px; background:linear-gradient(to right, rgba(255,213,156,0.8), transparent);"></div>
+                    <div style="padding:28px; display:flex; flex-direction:column; gap:14px; height:100%;">
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <div style="width:48px;height:48px;border-radius:14px;background:rgba(255,213,156,0.1);border:1px solid rgba(255,213,156,0.2);display:flex;align-items:center;justify-content:center;">
+                                <span class="material-symbols-outlined" style="color:#ffd59c;font-size:24px;">query_stats</span>
+                            </div>
+                            <div style="display:flex;gap:6px;">
+                                <span class="project-tag">Analytics</span>
+                                <span class="project-tag">BI</span>
+                            </div>
+                        </div>
+                        <div style="flex:1;">
+                            <h3 style="font-family:'Geist',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.02em;color:#e5e2e1;margin-bottom:8px;">INDRA</h3>
+                            <p style="color:#859399;font-size:13px;line-height:1.7;margin-bottom:16px;">Intelligent Network Data ROI Analysis — transforms business data into actionable insights through dashboards and predictive reporting.</p>
+                        </div>
+                        <div style="display:flex;gap:8px;">
+                            <a href="https://indra-five.vercel.app/" target="_blank" class="btn-sm primary" style="flex:1;justify-content:center;"><span class="material-symbols-outlined" style="font-size:13px">rocket_launch</span> Demo</a>
+                            <a href="https://github.com/SK0705/INDRA" target="_blank" class="btn-sm ghost" style="flex:1;justify-content:center;"><span class="material-symbols-outlined" style="font-size:13px">code</span> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SJ Creative Labs -->
+                <div class="project-card glass-strong" style="border-radius:24px; padding:0; overflow:hidden; flex-direction:column;">
+                    <div style="height:5px; background:linear-gradient(to right, rgba(40,200,100,0.8), transparent);"></div>
+                    <div style="padding:28px; display:flex; flex-direction:column; gap:14px; height:100%;">
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <div style="width:48px;height:48px;border-radius:14px;background:rgba(40,200,100,0.1);border:1px solid rgba(40,200,100,0.2);display:flex;align-items:center;justify-content:center;">
+                                <span class="material-symbols-outlined" style="color:#28c864;font-size:24px;">language</span>
+                            </div>
+                            <div style="display:flex;gap:6px;">
+                                <span class="project-tag">Web</span>
+                                <span class="project-tag">Startup</span>
+                            </div>
+                        </div>
+                        <div style="flex:1;">
+                            <h3 style="font-family:'Geist',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.02em;color:#e5e2e1;margin-bottom:8px;">SJ Creative Labs</h3>
+                            <p style="color:#859399;font-size:13px;line-height:1.7;margin-bottom:16px;">Premium startup website showcasing software development, AI products, digital transformation and business solutions.</p>
+                        </div>
+                        <div style="display:flex;gap:8px;">
+                            <a href="https://sjcreativelabs.vercel.app/" target="_blank" class="btn-sm primary" style="flex:1;justify-content:center;"><span class="material-symbols-outlined" style="font-size:13px">rocket_launch</span> Demo</a>
+                            <a href="https://github.com/SK0705/SJCREATIVELABS" target="_blank" class="btn-sm ghost" style="flex:1;justify-content:center;"><span class="material-symbols-outlined" style="font-size:13px">code</span> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Murthy & Co. -->
+                <div class="project-card glass-strong" style="border-radius:24px; padding:0; overflow:hidden; flex-direction:column;">
+                    <div style="height:5px; background:linear-gradient(to right, rgba(255,85,105,0.8), transparent);"></div>
+                    <div style="padding:28px; display:flex; flex-direction:column; gap:14px; height:100%;">
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <div style="width:48px;height:48px;border-radius:14px;background:rgba(255,85,105,0.1);border:1px solid rgba(255,85,105,0.2);display:flex;align-items:center;justify-content:center;">
+                                <span class="material-symbols-outlined" style="color:#ff5569;font-size:24px;">gavel</span>
+                            </div>
+                            <div style="display:flex;gap:6px;">
+                                <span class="project-tag">Legal</span>
+                                <span class="project-tag">Business</span>
+                            </div>
+                        </div>
+                        <div style="flex:1;">
+                            <h3 style="font-family:'Geist',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.02em;color:#e5e2e1;margin-bottom:8px;">Murthy &amp; Co.</h3>
+                            <p style="color:#859399;font-size:13px;line-height:1.7;margin-bottom:16px;">Professional firm website for a legal and consulting practice — services, team profiles and client-facing information.</p>
+                        </div>
+                        <div style="display:flex;gap:8px;">
+                            <a href="https://murthy-co.vercel.app/" target="_blank" class="btn-sm primary" style="flex:1;justify-content:center;"><span class="material-symbols-outlined" style="font-size:13px">rocket_launch</span> Demo</a>
+                            <a href="https://github.com/SK0705/murthy-co" target="_blank" class="btn-sm ghost" style="flex:1;justify-content:center;"><span class="material-symbols-outlined" style="font-size:13px">code</span> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ─── EXPERIENCE ─── -->
+        <div class="divider"></div>
+        <section id="experience" class="section" style="padding-bottom:100px;">
+            <span class="section-label">Timeline</span>
+            <h2 class="section-title" style="margin-bottom:56px;">My <span style="color:var(--cyan);">Journey</span></h2>
+            <div style="max-width:700px; position:relative; padding-left:50px;">
+                <div class="timeline-line"></div>
+                <!-- Item -->
+                <div style="display:flex; gap:20px; position:relative; margin-bottom:48px;">
+                    <div class="timeline-dot" style="position:absolute; left:-35px; margin-top:5px;"></div>
+                    <div class="glass-strong" style="border-radius:20px; padding:28px; flex:1; transition: all 0.3s ease;">
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px; flex-wrap:wrap; gap:10px;">
+                            <div>
+                                <h3 style="font-family:'Geist',sans-serif;font-size:20px;font-weight:700;color:#e5e2e1;">Web Development Intern</h3>
+                                <span style="font-size:13px; color:var(--cyan-dim); font-weight:600;">Adhoc Network Tech</span>
+                            </div>
+                            <span class="project-tag featured" style="padding:5px 14px; white-space:nowrap;">Apr 2025 – Jun 2025</span>
+                        </div>
+                        <ul style="display:flex; flex-direction:column; gap:10px;">
+                            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; color:#bbc9cf;">
+                                <span class="material-symbols-outlined" style="color:var(--cyan);font-size:16px;margin-top:2px;flex-shrink:0;">check_circle</span>
+                                Assisted in developing responsive web applications for business clients.
+                            </li>
+                            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; color:#bbc9cf;">
+                                <span class="material-symbols-outlined" style="color:var(--cyan);font-size:16px;margin-top:2px;flex-shrink:0;">check_circle</span>
+                                Worked on financial automation solutions using AI-assisted development tools.
+                            </li>
+                            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; color:#bbc9cf;">
+                                <span class="material-symbols-outlined" style="color:var(--cyan);font-size:16px;margin-top:2px;flex-shrink:0;">check_circle</span>
+                                Built business-oriented interfaces improving operational data accuracy.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── CONTACT ─── -->
+        <div class="divider"></div>
+        <section id="contact" class="section" style="padding-bottom:120px;">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Left -->
+                <div>
+                    <span class="section-label">Let's Connect</span>
+                    <h2 class="section-title" style="margin-bottom:20px;">Initiate <br/><span style="color:var(--cyan);">Contact</span></h2>
+                    <p style="font-size:16px; color:#859399; max-width:400px; line-height:1.7; margin-bottom:40px;">Currently open for selective collaborations and opportunities. Let's build intelligent products together.</p>
+                    <div style="display:flex; flex-direction:column; gap:20px;">
+                        <div style="display:flex; align-items:center; gap:16px;">
+                            <div class="glass" style="width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;">
+                                <span class="material-symbols-outlined" style="color:var(--cyan);">alternate_email</span>
+                            </div>
+                            <div>
+                                <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#859399;margin-bottom:3px;">Email</div>
+                                <a href="mailto:kuchisrikar05@gmail.com" style="font-size:16px;font-weight:600;color:#e5e2e1;text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='#a4e6ff'" onmouseout="this.style.color='#e5e2e1'">kuchisrikar05@gmail.com</a>
+                            </div>
+                        </div>
+                        <div style="display:flex; gap:12px; margin-top:8px;">
+                            <a href="https://github.com/SK0705" target="_blank" class="btn-sm ghost">
+                                <span class="material-symbols-outlined" style="font-size:16px">code</span> GitHub
+                            </a>
+                            <a href="https://linkedin.com/in/sk1377" target="_blank" class="btn-sm ghost">
+                                <span class="material-symbols-outlined" style="font-size:16px">link</span> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Form -->
+                <div class="glass-strong" style="border-radius:32px; padding:40px; position:relative; overflow:hidden; min-height:480px; display:flex; flex-direction:column; justify-content:center;">
+                    <div style="position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:rgba(0,209,255,0.06);filter:blur(60px);pointer-events:none;"></div>
+                    
+                    <script>
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const form = document.getElementById('contact-form');
+                            const fieldsWrapper = document.getElementById('contact-fields-wrapper');
+                            const successMsg = document.getElementById('success-message');
+                            
+                            if (form && fieldsWrapper && successMsg) {
+                                form.addEventListener('submit', () => {
+                                    // Submit opens in a new tab, and current tab changes UI state to success message overlay
+                                    setTimeout(() => {
+                                        fieldsWrapper.style.display = 'none';
+                                        successMsg.style.display = 'flex';
+                                    }, 150);
+                                });
+                            }
+                        });
+                    </script>
+                    
+                    <!-- Success Message Overlay -->
+                    <div id="success-message" style="display:none; flex-direction:column; align-items:center; justify-content:center; gap:20px; text-align:center; position:relative; z-index:1;">
+                        <span class="material-symbols-outlined" style="font-size:72px; color:var(--cyan); filter:drop-shadow(0 0 15px rgba(0,209,255,0.5));">check_circle</span>
+                        <h3 style="font-family:'Geist',sans-serif; font-size:24px; font-weight:800; color:#e5e2e1;">Signal Transmitted</h3>
+                        <p style="color:#859399; font-size:15px; max-width:320px; line-height:1.7; margin:0 auto;">Your transmission has been logged in the system database. I will respond to your query shortly.</p>
+                        <button onclick="document.getElementById('success-message').style.display='none'; document.getElementById('contact-fields-wrapper').style.display='flex'; document.getElementById('contact-form').reset();" class="btn-sm primary" style="margin-top:10px; cursor:pointer;">Send Another Message</button>
+                    </div>
+
+                    <form id="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSedkpBPtxxCBPC-LjyDpUdyKQWDC9sC8klFy1i6ehDoP62vAw/formResponse" method="POST" target="_blank" style="position:relative;z-index:1;">
+                        <div id="contact-fields-wrapper" style="display:flex; flex-direction:column; gap:28px;">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="form-field">
+                                <label>Name</label>
+                                <input type="text" name="entry.2005620554" placeholder="Your full name" required />
+                            </div>
+                            <div class="form-field">
+                                <label>Email</label>
+                                <input type="email" name="entry.1302366386" placeholder="your@email.com" required />
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="form-field">
+                                <label>Phone number</label>
+                                <input type="tel" name="entry.1166974658" placeholder="Your phone number" />
+                            </div>
+                            <div class="form-field">
+                                <label>Project / Collaboration</label>
+                                <input type="text" name="entry.1045781291" placeholder="Project / Collaboration" />
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label>Message</label>
+                            <textarea name="entry.1065046570" rows="4" placeholder="Tell me about your project or opportunity…" required></textarea>
+                        </div>
+                        <!-- Uiverse Button -->
+                        <button type="submit" class="uiverse-btn">
+                            <div class="btn-outline"></div>
+                            <div class="btn-content">
+                                <span class="icon">
+                                    <svg width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14.2199 21.63C13.0399 21.63 11.3699 20.8 10.0499 16.83L9.32988 14.67L7.16988 13.95C3.20988 12.63 2.37988 10.96 2.37988 9.78001C2.37988 8.61001 3.20988 6.93001 7.16988 5.60001L15.6599 2.77001C17.7799 2.06001 19.5499 2.27001 20.6399 3.35001C21.7299 4.43001 21.9399 6.21001 21.2299 8.33001L18.3999 16.82C17.0699 20.8 15.3999 21.63 14.2199 21.63Z" fill="currentColor"/>
+                                        <path d="M10.11 14.4C9.92 14.4 9.73 14.33 9.58 14.18C9.29 13.89 9.29 13.41 9.58 13.12L13.16 9.53C13.45 9.24 13.93 9.24 14.22 9.53C14.51 9.82 14.51 10.3 14.22 10.59L10.64 14.18C10.5 14.33 10.3 14.4 10.11 14.4Z" fill="currentColor"/>
+                                    </svg>
+                                </span>
+                                <p>
+                                    <span style="--i:0">S</span><span style="--i:1">e</span><span style="--i:2">n</span><span style="--i:3">d</span><span style="--i:4">&nbsp;</span><span style="--i:5">S</span><span style="--i:6">i</span><span style="--i:7">g</span><span style="--i:8">n</span><span style="--i:9">a</span><span style="--i:10">l</span>
+                                </p>
+                            </div>
+                        </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer>
+        <div style="font-family:'Geist',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.04em;color:var(--cyan-dim);">&lt;SK/&gt;</div>
+        <div style="font-size:13px;color:#859399;">© 2026 Srikar Kuchi &nbsp;·&nbsp; AI Product Builder</div>
+        <div style="display:flex;gap:20px;">
+            <a href="https://github.com/SK0705" target="_blank" style="font-size:13px;color:#859399;text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='#a4e6ff'" onmouseout="this.style.color='#859399'">GitHub</a>
+            <a href="https://linkedin.com/in/sk1377" target="_blank" style="font-size:13px;color:#859399;text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='#a4e6ff'" onmouseout="this.style.color='#859399'">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script>
+    // ─── GLOBAL CANVAS — COVER-FILL ───────────────────────────────────────────
+    (function() {
+        const canvas = document.getElementById('scroll-canvas');
+        const ctx = canvas.getContext('2d');
+        const FRAME_COUNT = 300;
+        const images = new Array(FRAME_COUNT);
+        let loadedCount = 0;
+        let currentFrameIndex = 0;
+        let raf = null;
+
+        const frameSrc = i =>
+            `frames/maverick_ os full_processed_${String(i).padStart(3,'0')}.jpg`;
+
+        // Compute natural image aspect ratio from first loaded image
+        let imgW = 1920, imgH = 1080;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            drawFrame(currentFrameIndex);
+        }
+
+        function drawFrame(index) {
+            const img = images[index];
+            if (!img || !img.complete || img.naturalWidth === 0) return;
+
+            const cw = canvas.width, ch = canvas.height;
+            const iw = img.naturalWidth, ih = img.naturalHeight;
+
+            // Cover: scale so the image fills the canvas, centered
+            const scale = Math.max(cw / iw, ch / ih);
+            const dw = iw * scale, dh = ih * scale;
+            const dx = (cw - dw) / 2, dy = (ch - dh) / 2;
+
+            ctx.clearRect(0, 0, cw, ch);
+            ctx.drawImage(img, dx, dy, dw, dh);
+        }
+
+        // Load all frames
+        for (let i = 0; i < FRAME_COUNT; i++) {
+            const img = new Image();
+            img.src = frameSrc(i);
+            images[i] = img;
+            img.onload = () => {
+                loadedCount++;
+                if (i === 0) {
+                    resizeCanvas();
+                    drawFrame(0);
+                }
+            };
+        }
+
+        // Scroll → frame index
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+                    const frac = maxScroll > 0 ? Math.max(0, Math.min(1, scrollTop / maxScroll)) : 0;
+                    const idx = Math.min(FRAME_COUNT - 1, Math.floor(frac * FRAME_COUNT));
+                    currentFrameIndex = idx;
+                    drawFrame(idx);
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+    })();
+
+    // ─── ACTIVE NAV HIGHLIGHT ─────────────────────────────────────────────────
+    (function() {
+        const sections = ['home','about','skills','projects','experience','contact'];
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    sections.forEach(id => {
+                        const el = document.getElementById('nav-' + id);
+                        if (el) el.classList.remove('active');
+                    });
+                    const nav = document.getElementById('nav-' + entry.target.id);
+                    if (nav) nav.classList.add('active');
+                }
+            });
+        }, { threshold: 0.4 });
+        sections.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) observer.observe(el);
+        });
+    })();
+
+    // ─── GLASS CARD 3D TILT ───────────────────────────────────────────────────
+    document.querySelectorAll('.glass-strong').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const r = card.getBoundingClientRect();
+            const x = e.clientX - r.left, y = e.clientY - r.top;
+            const cx = r.width / 2, cy = r.height / 2;
+            const rx = (y - cy) / 30, ry = (cx - x) / 30;
+            card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(900px) rotateX(0) rotateY(0)';
+        });
+    });
+
+    // ─── PROJECT CARD MOUSE GLOW ─────────────────────────────────────────────
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const r = card.getBoundingClientRect();
+            const x = e.clientX - r.left, y = e.clientY - r.top;
+            card.style.setProperty('--mx', x + 'px');
+            card.style.setProperty('--my', y + 'px');
+        });
+    });
+
+    // ─── FORM LABEL FOCUS ────────────────────────────────────────────────────
+    document.querySelectorAll('.form-field input, .form-field textarea, .form-field select').forEach(inp => {
+        inp.addEventListener('focus', () => { inp.previousElementSibling && (inp.previousElementSibling.style.color = '#a4e6ff'); });
+        inp.addEventListener('blur',  () => { inp.previousElementSibling && (inp.previousElementSibling.style.color = '#859399'); });
+    });
+
+    // ─── SMOOTH ANCHOR SCROLL ────────────────────────────────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const target = document.querySelector(a.getAttribute('href'));
+            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+        });
+    });
+
+    // ─── MOBILE MENU TOGGLE ─────────────────────────────────────────────────
+    (function() {
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        if (menuBtn && closeMenuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-full');
+            });
+
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                });
+            });
+        }
+    })();
+    </script>
+</body>
+</html>
