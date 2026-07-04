@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <title>Srikar Kuchi | AI Product Builder & Developer</title>
-    <meta name="description" content="Srikar Kuchi is an AI Product Builder and BCA graduate specializing in FinTech automation, custom software development, and intelligent workflow optimization.">
-    <meta name="keywords" content="Srikar Kuchi, AI Product Builder, FinTech Developer, Process Automation, BCA Graduate, CA Intermediate, Python Automation, Custom AI Solutions">
+    <meta name="description"
+        content="Srikar Kuchi is an AI Product Builder and BCA graduate specializing in FinTech automation, custom software development, and intelligent workflow optimization.">
+    <meta name="keywords"
+        content="Srikar Kuchi, AI Product Builder, FinTech Developer, Process Automation, BCA Graduate, CA Intermediate, Python Automation, Custom AI Solutions">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://srikar-kuchi.vercel.app/" />
 
@@ -14,19 +17,24 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://srikar-kuchi.vercel.app/">
     <meta property="og:title" content="Srikar Kuchi | AI Product Builder">
-    <meta property="og:description" content="AI Product Builder & Developer specializing in FinTech automation, custom software, and intelligent workflow optimization.">
+    <meta property="og:description"
+        content="AI Product Builder & Developer specializing in FinTech automation, custom software, and intelligent workflow optimization.">
     <meta property="og:image" content="https://srikar-kuchi.vercel.app/profile.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://srikar-kuchi.vercel.app/">
     <meta property="twitter:title" content="Srikar Kuchi | AI Product Builder">
-    <meta property="twitter:description" content="AI Product Builder & Developer specializing in FinTech automation, custom software, and intelligent workflow optimization.">
+    <meta property="twitter:description"
+        content="AI Product Builder & Developer specializing in FinTech automation, custom software, and intelligent workflow optimization.">
     <meta property="twitter:image" content="https://srikar-kuchi.vercel.app/profile.jpg">
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@400;600;700;800&display=swap"
+        rel="stylesheet" />
 
     <script id="tailwind-config">
         tailwind.config = {
@@ -58,17 +66,24 @@
     </script>
 
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         :root {
             --cyan: #00d1ff;
             --cyan-dim: #a4e6ff;
             --glow: rgba(0, 209, 255, 0.2);
-            --glass: rgba(255,255,255,0.04);
-            --glass-border: rgba(255,255,255,0.12);
+            --glass: rgba(255, 255, 255, 0.04);
+            --glass-border: rgba(255, 255, 255, 0.12);
         }
 
-        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
 
         body {
             font-family: "Inter", sans-serif;
@@ -91,6 +106,7 @@
             background: #000;
             overflow: hidden;
         }
+
         #scroll-canvas {
             position: absolute;
             top: 50%;
@@ -98,18 +114,135 @@
             transform: translate(-50%, -50%);
             /* JS will set actual px size to cover viewport */
         }
+
+        /* ─── CUSTOM SCROLLBAR ─── */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090909;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 209, 255, 0.2);
+            border-radius: 999px;
+            border: 2px solid #090909;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--cyan);
+            box-shadow: 0 0 10px var(--cyan);
+        }
+
         #bg-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(
-                to bottom,
-                rgba(19,19,19,0.55) 0%,
-                rgba(19,19,19,0.45) 40%,
-                rgba(19,19,19,0.75) 80%,
-                rgba(19,19,19,0.95) 100%
-            );
+            background: 
+                radial-gradient(rgba(0, 209, 255, 0.08) 1.5px, transparent 1.5px),
+                linear-gradient(to bottom,
+                    rgba(10, 10, 10, 0.2) 0%,
+                    rgba(13, 13, 13, 0.3) 40%,
+                    rgba(19, 19, 19, 0.75) 80%,
+                    rgba(19, 19, 19, 0.98) 100%);
+            background-size: 28px 28px, 100% 100%;
             pointer-events: none;
         }
+
+        /* ─── SCI-FI HOLOGRAPHIC STYLES ─── */
+        .holo-card {
+            position: relative;
+            background: rgba(12, 16, 20, 0.45);
+            backdrop-filter: blur(20px) saturate(1.6);
+            border: 1px solid rgba(0, 209, 255, 0.12);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(0, 209, 255, 0.03);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+        }
+
+        .holo-card::before, .holo-card::after {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            border-color: rgba(0, 209, 255, 0.5);
+            border-style: solid;
+            pointer-events: none;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+            z-index: 5;
+        }
+
+        /* Corner Brackets positions */
+        .holo-card::before {
+            top: -1px;
+            left: -1px;
+            border-width: 2px 0 0 2px;
+        }
+
+        .holo-card::after {
+            bottom: -1px;
+            right: -1px;
+            border-width: 0 2px 2px 0;
+        }
+
+        .holo-card:hover {
+            border-color: rgba(0, 209, 255, 0.35);
+            box-shadow: 0 20px 50px rgba(0, 209, 255, 0.12), inset 0 0 20px rgba(0, 209, 255, 0.06);
+            transform: translateY(-4px);
+        }
+
+        .holo-card:hover::before, .holo-card:hover::after {
+            width: 22px;
+            height: 22px;
+            opacity: 1;
+            border-color: var(--cyan);
+            filter: drop-shadow(0 0 4px var(--cyan));
+        }
+
+        /* Laser Scanline Sweep Animation */
+        .scanline::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                transparent 50%,
+                rgba(0, 209, 255, 0.07) 50%,
+                rgba(0, 209, 255, 0.18) 52%,
+                rgba(0, 209, 255, 0.07) 54%,
+                transparent 54%
+            );
+            background-size: 100% 200%;
+            animation: scan 6s linear infinite;
+            pointer-events: none;
+            z-index: 2;
+            opacity: 0.35;
+        }
+
+        @keyframes scan {
+            0% { background-position: 0 -100%; }
+            100% { background-position: 0 100%; }
+        }
+
+        /* Sci-Fi Glow texts and rings */
+        .text-glow-cyan {
+            text-shadow: 0 0 12px rgba(0, 209, 255, 0.7);
+        }
+        .text-glow-purple {
+            text-shadow: 0 0 12px rgba(194, 193, 255, 0.7);
+        }
+        .text-glow-orange {
+            text-shadow: 0 0 12px rgba(255, 213, 156, 0.7);
+        }
+        .text-glow-green {
+            text-shadow: 0 0 12px rgba(40, 200, 100, 0.7);
+        }
+        .text-glow-red {
+            text-shadow: 0 0 12px rgba(255, 85, 105, 0.7);
+        }
+
 
         /* ─── GLASS ─── */
         .glass {
@@ -117,99 +250,185 @@
             backdrop-filter: blur(20px) saturate(1.5);
             border: 1px solid var(--glass-border);
         }
+
         .glass-strong {
-            background: rgba(255,255,255,0.07);
+            background: rgba(255, 255, 255, 0.07);
             backdrop-filter: blur(32px) saturate(1.8);
-            border: 1px solid rgba(255,255,255,0.18);
-            border-bottom-color: rgba(255,255,255,0.06);
-            border-right-color: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-bottom-color: rgba(255, 255, 255, 0.06);
+            border-right-color: rgba(255, 255, 255, 0.06);
         }
 
         /* ─── GLOW TEXT ─── */
-        .glow-cyan { text-shadow: 0 0 30px rgba(0, 209, 255, 0.6), 0 0 60px rgba(0, 209, 255, 0.3); }
-        .glow-dot { filter: drop-shadow(0 0 6px var(--cyan)); animation: pulse-dot 2.5s ease-in-out infinite; }
-        @keyframes pulse-dot { 0%,100%{opacity:1;} 50%{opacity:0.5;} }
+        .glow-cyan {
+            text-shadow: 0 0 30px rgba(0, 209, 255, 0.6), 0 0 60px rgba(0, 209, 255, 0.3);
+        }
+
+        .glow-dot {
+            filter: drop-shadow(0 0 6px var(--cyan));
+            animation: pulse-dot 2.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
 
         /* ─── NAV ─── */
         #topnav {
-            position: fixed; top: 0; left: 50%; transform: translateX(-50%);
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 100;
-            width: 92%; max-width: 1280px;
+            width: 92%;
+            max-width: 1280px;
             margin-top: 16px;
-            display: flex; align-items: center; justify-content: space-between;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             padding: 12px 28px;
             border-radius: 999px;
-            background: rgba(10,10,10,0.5);
+            background: rgba(10, 10, 10, 0.5);
             backdrop-filter: blur(30px) saturate(2);
-            border: 1px solid rgba(255,255,255,0.12);
-            box-shadow: 0 0 40px rgba(0,209,255,0.08), inset 0 1px 0 rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 40px rgba(0, 209, 255, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
         }
+
         #topnav .logo {
             font-family: "Geist", sans-serif;
-            font-size: 22px; font-weight: 800;
+            font-size: 22px;
+            font-weight: 800;
             letter-spacing: -0.04em;
             color: var(--cyan-dim);
             text-decoration: none;
         }
-        #topnav .nav-links { display: flex; gap: 32px; align-items: center; }
+
+        #topnav .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
         #topnav .nav-links a {
-            font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
             color: #859399;
             text-decoration: none;
             transition: color 0.2s ease;
         }
-        #topnav .nav-links a:hover { color: var(--cyan-dim); }
-        #topnav .nav-links a.active { color: var(--cyan-dim); border-bottom: 1px solid var(--cyan-dim); padding-bottom: 1px; }
+
+        #topnav .nav-links a:hover {
+            color: var(--cyan-dim);
+        }
+
+        #topnav .nav-links a.active {
+            color: var(--cyan-dim);
+            border-bottom: 1px solid var(--cyan-dim);
+            padding-bottom: 1px;
+        }
+
         #topnav .hire-btn {
-            font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
             background: var(--cyan);
             color: #003543;
             padding: 10px 24px;
             border-radius: 999px;
             text-decoration: none;
             transition: all 0.2s ease;
-            box-shadow: 0 0 20px rgba(0,209,255,0.3);
+            box-shadow: 0 0 20px rgba(0, 209, 255, 0.3);
         }
-        #topnav .hire-btn:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(0,209,255,0.5); }
+
+        #topnav .hire-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 209, 255, 0.5);
+        }
 
         /* ─── SIDE NAV ─── */
         #sidenav {
-            position: fixed; right: 20px; top: 50%; transform: translateY(-50%);
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
             z-index: 50;
-            display: flex; flex-direction: column; gap: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
             padding: 16px 10px;
             border-radius: 999px;
-            background: rgba(10,10,10,0.4);
+            background: rgba(10, 10, 10, 0.4);
             backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
         }
+
         #sidenav a {
-            display: flex; flex-direction: column; align-items: center; gap: 3px;
-            color: #859399; text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            color: #859399;
+            text-decoration: none;
             padding: 8px;
             border-radius: 12px;
             transition: all 0.2s ease;
         }
-        #sidenav a:hover { color: var(--cyan-dim); background: rgba(0,209,255,0.08); transform: translateX(-3px); }
-        #sidenav a span.label { font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+
+        #sidenav a:hover {
+            color: var(--cyan-dim);
+            background: rgba(0, 209, 255, 0.08);
+            transform: translateX(-3px);
+        }
+
+        #sidenav a span.label {
+            font-size: 9px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
 
         /* ─── SECTIONS ─── */
-        .section { position: relative; z-index: 10; max-width: 1280px; margin: 0 auto; padding: 0 28px; }
+        .section {
+            position: relative;
+            z-index: 10;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
 
         /* ─── HERO ─── */
         #home {
             min-height: 100vh;
-            display: flex; align-items: center;
+            display: flex;
+            align-items: center;
         }
+
         .hero-badge {
-            display: inline-flex; align-items: center; gap: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             padding: 8px 18px;
             border-radius: 999px;
-            font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
             color: var(--cyan-dim);
             margin-bottom: 28px;
         }
+
         h1.display {
             font-family: "Geist", sans-serif;
             font-size: clamp(48px, 7vw, 88px);
@@ -218,12 +437,17 @@
             line-height: 1.05;
             color: #e5e2e1;
         }
+
         .section-label {
-            font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
             color: var(--cyan-dim);
             margin-bottom: 16px;
             display: block;
         }
+
         h2.section-title {
             font-family: "Geist", sans-serif;
             font-size: clamp(36px, 5vw, 64px);
@@ -235,149 +459,355 @@
 
         /* ─── STAT PILLS ─── */
         .stat-pill {
-            display: flex; flex-direction: column; align-items: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             padding: 16px 24px;
             border-radius: 16px;
             text-align: center;
             min-width: 110px;
         }
+
         .stat-pill .val {
             font-family: "Geist", sans-serif;
-            font-size: 28px; font-weight: 800;
+            font-size: 28px;
+            font-weight: 800;
             letter-spacing: -0.04em;
             color: var(--cyan);
         }
+
         .stat-pill .lbl {
-            font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
             color: #859399;
             margin-top: 4px;
         }
 
         /* ─── SKILL BAR ─── */
         .skill-bar-track {
-            height: 3px; background: rgba(255,255,255,0.06);
-            border-radius: 9999px; overflow: hidden; margin-top: 8px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 9999px;
+            overflow: hidden;
+            margin-top: 8px;
         }
+
         .skill-bar-fill {
-            height: 100%; border-radius: 9999px;
-            background: linear-gradient(to right, rgba(0,209,255,0.5), var(--cyan));
+            height: 100%;
+            border-radius: 9999px;
+            background: linear-gradient(to right, rgba(0, 209, 255, 0.5), var(--cyan));
             box-shadow: 0 0 10px var(--cyan);
             transition: width 1s ease;
         }
 
-        /* ─── PROJECT CARDS ─── */
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
+        /* ─── 3D CIRCULAR CAROUSEL ─── */
+        .carousel-3d-container {
+            position: relative;
+            width: 100%;
+            height: 460px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 0;
+            user-select: none;
+            overflow: visible;
         }
-        .bento-card-wide {
-            grid-column: span 2;
+
+        .carousel-3d-scene {
+            position: relative;
+            width: 340px;
+            height: 400px;
+            perspective: 1200px;
+            perspective-origin: 50% 35%;
+            z-index: 2;
         }
-        .bento-card-tall {
-            grid-row: span 2;
+
+        .carousel-3d-track {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.2, 0.85, 0.3, 1);
         }
+
+        .carousel-item {
+            position: absolute !important;
+            width: 340px !important;
+            height: 400px !important;
+            left: 0;
+            top: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            transition: opacity 0.4s, filter 0.4s, border-color 0.4s, transform 0.1s ease-out;
+            opacity: 0.25;
+            filter: brightness(0.3) blur(2px);
+        }
+
+        .carousel-item.active {
+            opacity: 1;
+            filter: brightness(1) blur(0px);
+            z-index: 10;
+        }
+
+        .carousel-item.neighbor {
+            opacity: 0.65;
+            filter: brightness(0.6) blur(0.7px);
+            z-index: 5;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(0, 209, 255, 0.25);
+            color: var(--cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 150;
+            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+            box-shadow: 0 0 15px rgba(0, 209, 255, 0.1), inset 0 0 10px rgba(0, 209, 255, 0.05);
+            backdrop-filter: blur(8px);
+        }
+
+        .carousel-btn:hover {
+            background: rgba(0, 209, 255, 0.1);
+            border-color: var(--cyan);
+            box-shadow: 0 0 25px rgba(0, 209, 255, 0.25), inset 0 0 15px rgba(0, 209, 255, 0.15);
+            color: #ffffff;
+        }
+
+        .carousel-btn.prev {
+            left: calc(50% - 280px);
+        }
+
+        .carousel-btn.next {
+            right: calc(50% - 280px);
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            position: absolute !important;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 150;
+        }
+
+        .carousel-dot {
+            width: 24px;
+            height: 4px;
+            border-radius: 2px;
+            background: rgba(0, 209, 255, 0.15);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: var(--cyan);
+            width: 48px;
+            box-shadow: 0 0 10px var(--cyan);
+        }
+
         @media (max-width: 1024px) {
-            .bento-grid {
-                grid-template-columns: 1fr;
+            .carousel-3d-container {
+                height: 400px;
             }
-            .bento-card-wide {
-                grid-column: span 1;
+            .carousel-3d-scene {
+                width: 280px;
+                height: 340px;
+                perspective: 800px;
             }
-            .bento-card-tall {
-                grid-row: span 1;
+            .carousel-item {
+                width: 280px !important;
+                height: 340px !important;
+            }
+            .carousel-btn.prev {
+                left: 15px;
+            }
+            .carousel-btn.next {
+                right: 15px;
+            }
+            .carousel-controls {
+                bottom: 20px;
             }
         }
+
         .project-card {
             border-radius: 24px;
             padding: 32px;
-            display: flex; flex-direction: column; gap: 20px;
-            transition: all 0.4s cubic-bezier(0.23,1,0.32,1);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            --glow-color: rgba(0, 209, 255, 0.15);
+            --theme-color: var(--cyan);
         }
+
         .project-card::before {
             content: '';
-            position: absolute; inset: 0;
-            background: linear-gradient(135deg, rgba(0,209,255,0.06) 0%, transparent 60%);
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(300px circle at var(--mx, 50%) var(--my, 50%), var(--glow-color) 0%, transparent 65%);
             opacity: 0;
             transition: opacity 0.4s ease;
             pointer-events: none;
+            z-index: 1;
         }
-        .project-card:hover::before { opacity: 1; }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
         .project-card:hover {
             transform: translateY(-6px);
-            border-color: rgba(0,209,255,0.3) !important;
-            box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 30px rgba(0,209,255,0.12);
+            border-color: var(--theme-color) !important;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 35px var(--glow-color);
         }
+
         .project-icon {
-            width: 56px; height: 56px; border-radius: 16px;
-            display: flex; align-items: center; justify-content: center;
-            background: rgba(0,209,255,0.1);
-            border: 1px solid rgba(0,209,255,0.2);
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 209, 255, 0.1);
+            border: 1px solid rgba(0, 209, 255, 0.2);
             font-size: 28px;
             flex-shrink: 0;
         }
+
         .project-tag {
-            font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-            padding: 4px 12px; border-radius: 999px;
-            border: 1px solid rgba(255,255,255,0.1);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             color: #859399;
         }
-        .project-tag.featured { background: rgba(0,209,255,0.1); border-color: rgba(0,209,255,0.3); color: var(--cyan-dim); }
+
+        .project-tag.featured {
+            background: rgba(0, 209, 255, 0.1);
+            border-color: rgba(0, 209, 255, 0.3);
+            color: var(--cyan-dim);
+        }
+
         .btn-sm {
-            display: inline-flex; align-items: center; gap: 6px;
-            padding: 8px 18px; border-radius: 999px;
-            font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 18px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
             transition: all 0.2s ease;
             text-decoration: none;
         }
+
         .btn-sm.primary {
-            background: rgba(0,209,255,0.15); border: 1px solid rgba(0,209,255,0.35);
+            background: rgba(0, 209, 255, 0.15);
+            border: 1px solid rgba(0, 209, 255, 0.35);
             color: var(--cyan-dim);
         }
-        .btn-sm.primary:hover { background: rgba(0,209,255,0.25); box-shadow: 0 0 16px rgba(0,209,255,0.25); }
+
+        .btn-sm.primary:hover {
+            background: rgba(0, 209, 255, 0.25);
+            box-shadow: 0 0 16px rgba(0, 209, 255, 0.25);
+        }
+
         .btn-sm.ghost {
-            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             color: #859399;
         }
-        .btn-sm.ghost:hover { background: rgba(255,255,255,0.1); color: #e5e2e1; }
+
+        .btn-sm.ghost:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #e5e2e1;
+        }
 
         /* ─── TIMELINE ─── */
         .timeline-line {
-            position: absolute; left: 15px; top: 0; bottom: 0;
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
             width: 1px;
-            background: linear-gradient(to bottom, transparent, rgba(0,209,255,0.4), transparent);
+            background: linear-gradient(to bottom, transparent, rgba(0, 209, 255, 0.4), transparent);
         }
+
         .timeline-dot {
-            width: 10px; height: 10px; border-radius: 50%;
-            background: var(--cyan); flex-shrink: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--cyan);
+            flex-shrink: 0;
             box-shadow: 0 0 12px var(--cyan);
             margin-top: 4px;
         }
 
         /* ─── CONTACT FORM ─── */
-        .form-field input, .form-field textarea, .form-field select {
+        .form-field input,
+        .form-field textarea,
+        .form-field select {
             width: 100%;
-            background: rgba(0,0,0,0.4);
-            border: 0; border-bottom: 1px solid rgba(255,255,255,0.12);
+            background: rgba(0, 0, 0, 0.4);
+            border: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
             color: #e5e2e1;
             padding: 14px 4px;
-            font-size: 15px; font-family: "Inter", sans-serif;
+            font-size: 15px;
+            font-family: "Inter", sans-serif;
             outline: none;
             transition: border-color 0.2s ease;
         }
-        .form-field input::placeholder, .form-field textarea::placeholder { color: #3c494e; }
-        .form-field input:focus, .form-field textarea:focus, .form-field select:focus {
-            border-bottom-color: var(--cyan);
+
+        .form-field input::placeholder,
+        .form-field textarea::placeholder {
+            color: #3c494e;
         }
+
+        .form-field input:focus,
+        .form-field textarea:focus,
+        .form-field select:focus {
+            border-bottom-color: var(--cyan);
+            box-shadow: 0 1px 0 var(--cyan);
+        }
+
         .form-field label {
-            font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
-            color: #859399; display: block; margin-bottom: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #859399;
+            display: block;
+            margin-bottom: 4px;
             transition: color 0.2s ease;
         }
-        textarea { resize: none; }
+
+        textarea {
+            resize: none;
+        }
 
         /* ─── SEND BUTTON (Uiverse) ─── */
         .uiverse-btn {
@@ -385,105 +815,235 @@
             --neutral-1: #1e1e1e;
             --neutral-2: #131313;
             --radius: 14px;
-            cursor: pointer; border-radius: var(--radius); border: none;
-            display: flex; align-items: center; justify-content: center;
-            position: relative; transition: all 0.3s ease;
-            width: 100%; height: 64px;
-            font-size: 17px; font-weight: 700; font-family: "Geist", sans-serif;
-            color: #fff; background: transparent;
-            box-shadow: 0 0 1px 2px rgba(255,255,255,0.08), 0 10px 20px rgba(0,0,0,0.3);
+            cursor: pointer;
+            border-radius: var(--radius);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.3s ease;
+            width: 100%;
+            height: 64px;
+            font-size: 17px;
+            font-weight: 700;
+            font-family: "Geist", sans-serif;
+            color: #fff;
+            background: transparent;
+            box-shadow: 0 0 1px 2px rgba(255, 255, 255, 0.08), 0 10px 20px rgba(0, 0, 0, 0.3);
         }
-        .uiverse-btn:hover { transform: scale(1.02); box-shadow: 0 0 2px 3px rgba(0,209,255,0.2), 0 15px 30px rgba(0,0,0,0.4); }
-        .uiverse-btn:active { transform: scale(0.99); }
+
+        .uiverse-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 2px 3px rgba(0, 209, 255, 0.2), 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .uiverse-btn:active {
+            transform: scale(0.99);
+        }
+
         .uiverse-btn::after {
             content: "";
-            position: absolute; inset: 0;
+            position: absolute;
+            inset: 0;
             border-radius: var(--radius);
             border: 2px solid transparent;
             background: linear-gradient(var(--neutral-1), var(--neutral-2)) padding-box,
-                linear-gradient(to bottom, rgba(0,209,255,0.5), rgba(0,209,255,0.1)) border-box;
-            z-index: 0; transition: all 0.4s ease;
+                linear-gradient(to bottom, rgba(0, 209, 255, 0.5), rgba(0, 209, 255, 0.1)) border-box;
+            z-index: 0;
+            transition: all 0.4s ease;
         }
-        .uiverse-btn:hover::after { transform: scale(1.04, 1.08); box-shadow: inset 0 -1px 3px 0 rgba(0,209,255,0.4); }
+
+        .uiverse-btn:hover::after {
+            transform: scale(1.04, 1.08);
+            box-shadow: inset 0 -1px 3px 0 rgba(0, 209, 255, 0.4);
+        }
+
         .uiverse-btn::before {
-            content: ""; inset: 6px 6px 6px 6px; position: absolute;
+            content: "";
+            inset: 6px 6px 6px 6px;
+            position: absolute;
             background: linear-gradient(to top, var(--neutral-1), var(--neutral-2));
-            border-radius: 10px; filter: blur(0.5px); z-index: 2;
+            border-radius: 10px;
+            filter: blur(0.5px);
+            z-index: 2;
         }
+
         .uiverse-btn .btn-outline {
-            position: absolute; border-radius: inherit; overflow: hidden;
-            z-index: 1; opacity: 0; transition: opacity 0.4s ease; inset: -2px -3px;
+            position: absolute;
+            border-radius: inherit;
+            overflow: hidden;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            inset: -2px -3px;
         }
+
         .uiverse-btn .btn-outline::before {
-            content: ""; position: absolute; inset: -100%;
-            background: conic-gradient(from 180deg, transparent 60%, rgba(0,209,255,0.8) 80%, transparent 100%);
-            animation: spin-btn 2s linear infinite; animation-play-state: paused;
+            content: "";
+            position: absolute;
+            inset: -100%;
+            background: conic-gradient(from 180deg, transparent 60%, rgba(0, 209, 255, 0.8) 80%, transparent 100%);
+            animation: spin-btn 2s linear infinite;
+            animation-play-state: paused;
         }
-        @keyframes spin-btn { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
-        .uiverse-btn:hover .btn-outline { opacity: 1; }
-        .uiverse-btn:hover .btn-outline::before { animation-play-state: running; }
+
+        @keyframes spin-btn {
+            0% {
+                transform: rotate(0deg)
+            }
+
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+
+        .uiverse-btn:hover .btn-outline {
+            opacity: 1;
+        }
+
+        .uiverse-btn:hover .btn-outline::before {
+            animation-play-state: running;
+        }
+
         .uiverse-btn .btn-content {
-            position: relative; z-index: 5;
-            display: flex; align-items: center; gap: 12px;
+            position: relative;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
-        .uiverse-btn .btn-content .icon { display: flex; align-items: center; color: var(--cyan); }
-        .uiverse-btn .btn-content span { display: block; }
+
+        .uiverse-btn .btn-content .icon {
+            display: flex;
+            align-items: center;
+            color: var(--cyan);
+        }
+
+        .uiverse-btn .btn-content span {
+            display: block;
+        }
+
         .uiverse-btn .btn-content p {
-            display: flex; align-items: center; gap: 1px;
+            display: flex;
+            align-items: center;
+            gap: 1px;
             color: var(--cyan-dim);
         }
+
         .uiverse-btn .btn-content p span {
-            display: inline-block; opacity: 0;
+            display: inline-block;
+            opacity: 0;
             animation: letter-in 0.8s ease forwards calc(var(--i) * 0.03s);
         }
+
         @keyframes letter-in {
-            0% { opacity:0; transform: translateY(-12px); color: var(--cyan); }
-            60% { opacity:1; transform: translateY(2px); }
-            100% { opacity:1; transform: translateY(0); }
+            0% {
+                opacity: 0;
+                transform: translateY(-12px);
+                color: var(--cyan);
+            }
+
+            60% {
+                opacity: 1;
+                transform: translateY(2px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         .uiverse-btn:hover .btn-content p span {
             animation: wave-letter 0.5s ease forwards calc(var(--i) * 0.02s);
         }
+
         @keyframes wave-letter {
-            30% { transform: translateY(3px); color: var(--cyan); }
-            50% { transform: translateY(-2px); }
-            100% { transform: translateY(0); opacity:1; }
+            30% {
+                transform: translateY(3px);
+                color: var(--cyan);
+            }
+
+            50% {
+                transform: translateY(-2px);
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         /* ─── FOOTER ─── */
         footer {
-            position: relative; z-index: 10;
-            border-top: 1px solid rgba(255,255,255,0.06);
-            max-width: 1280px; margin: 0 auto;
+            position: relative;
+            z-index: 10;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            max-width: 1280px;
+            margin: 0 auto;
             padding: 40px 28px;
-            display: flex; justify-content: space-between; align-items: center;
-            flex-wrap: wrap; gap: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
         }
 
         /* ─── SCROLL INDICATOR ─── */
         .scroll-indicator {
-            position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
-            display: flex; flex-direction: column; align-items: center; gap: 8px;
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
             opacity: 0.5;
             animation: bounce-hint 2s ease-in-out infinite;
         }
-        @keyframes bounce-hint { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+        @keyframes bounce-hint {
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0)
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(8px)
+            }
+        }
 
         /* ─── ANIMATED FLOAT ─── */
         @keyframes float {
-            0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)}
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-10px)
+            }
         }
 
         /* ─── SECTION DIVIDER ─── */
         .divider {
             height: 1px;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.08), transparent);
             margin: 0 0 80px 0;
         }
 
         @media (max-width: 768px) {
-            #sidenav { display: none; }
-            #topnav .nav-links { display: none; }
+            #sidenav {
+                display: none;
+            }
+
+            #topnav .nav-links {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -492,6 +1052,7 @@
     <!-- ═══ BACKGROUND CANVAS ═══ -->
     <div id="bg-wrap">
         <canvas id="scroll-canvas"></canvas>
+        <canvas id="particle-canvas" style="position:absolute; inset:0; z-index:1; pointer-events:none;"></canvas>
         <div id="bg-overlay"></div>
     </div>
 
@@ -503,43 +1064,67 @@
             <a href="#skills" id="nav-skills">Skills</a>
             <a href="#projects" id="nav-projects">Projects</a>
             <a href="#experience" id="nav-experience">Experience</a>
-            <a href="#contact" id="nav-contact">Contact</a>
         </div>
         <div style="display:flex; align-items:center; gap:16px;">
             <a href="#contact" class="hire-btn hidden md:inline-block">Hire Me</a>
             <!-- Hamburger Button (Mobile only) -->
-            <button id="menu-btn" class="md:hidden text-outline hover:text-primary flex items-center justify-center p-2 focus:outline-none" aria-label="Toggle Menu" style="background:none; border:none; cursor:pointer;">
+            <button id="menu-btn"
+                class="md:hidden text-outline hover:text-primary flex items-center justify-center p-2 focus:outline-none"
+                aria-label="Toggle Menu" style="background:none; border:none; cursor:pointer;">
                 <span class="material-symbols-outlined" style="font-size:28px;">menu</span>
             </button>
         </div>
     </nav>
 
     <!-- Mobile Navigation Overlay (hidden by default) -->
-    <div id="mobile-menu" class="fixed inset-0 z-[99] bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 transition-all duration-300 transform translate-x-full md:hidden">
-        <button id="close-menu" class="absolute top-6 right-6 text-outline hover:text-primary p-2" style="background:none; border:none; cursor:pointer;">
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[99] bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 transition-all duration-300 transform translate-x-full md:hidden">
+        <button id="close-menu" class="absolute top-6 right-6 text-outline hover:text-primary p-2"
+            style="background:none; border:none; cursor:pointer;">
             <span class="material-symbols-outlined" style="font-size:36px;">close</span>
         </button>
-        <a href="#about" class="mobile-nav-link text-2xl font-bold tracking-wider text-outline hover:text-primary transition-colors">ABOUT</a>
-        <a href="#skills" class="mobile-nav-link text-2xl font-bold tracking-wider text-outline hover:text-primary transition-colors">SKILLS</a>
-        <a href="#projects" class="mobile-nav-link text-2xl font-bold tracking-wider text-outline hover:text-primary transition-colors">PROJECTS</a>
-        <a href="#experience" class="mobile-nav-link text-2xl font-bold tracking-wider text-outline hover:text-primary transition-colors">EXPERIENCE</a>
-        <a href="#contact" class="mobile-nav-link text-2xl font-bold tracking-wider text-outline hover:text-primary transition-colors">CONTACT</a>
-        <a href="#contact" class="mobile-nav-link hire-btn mt-4 text-base font-bold px-8 py-3 bg-primary-container text-on-primary rounded-full">Hire Me</a>
+        <a href="#about"
+            class="mobile-nav-link text-2xl font-bold tracking-wider text-outline hover:text-primary transition-colors">ABOUT</a>
+        <a href="#skills"
+            class="mobile-nav-link text-2xl font-bold tracking-wider text-outline hover:text-primary transition-colors">SKILLS</a>
+        <a href="#projects"
+            class="mobile-nav-link text-2xl font-bold tracking-wider text-outline hover:text-primary transition-colors">PROJECTS</a>
+        <a href="#experience"
+            class="mobile-nav-link text-2xl font-bold tracking-wider text-outline hover:text-primary transition-colors">EXPERIENCE</a>
+        <a href="#contact"
+            class="mobile-nav-link hire-btn mt-4 text-base font-bold px-8 py-3 bg-primary-container text-on-primary rounded-full">Hire
+            Me</a>
     </div>
 
     <!-- ═══ SIDE NAV ═══ -->
-    <aside id="sidenav">
-        <a href="https://github.com/SK0705" target="_blank">
-            <span class="material-symbols-outlined" style="font-size:20px">code</span>
-            <span class="label">Git</span>
+    <aside id="sidenav" class="glass-strong" style="box-shadow: 0 0 25px rgba(0, 209, 255, 0.08);">
+        <a href="https://github.com/SK0705" target="_blank" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.2s ease;">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+            </svg>
+            <span class="label" style="margin-top: 2px;">Git</span>
         </a>
-        <a href="https://linkedin.com/in/sk1377" target="_blank">
-            <span class="material-symbols-outlined" style="font-size:20px">link</span>
-            <span class="label">In</span>
+        <a href="https://linkedin.com/in/sk1377" target="_blank" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.2s ease;">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+            <span class="label" style="margin-top: 2px;">In</span>
         </a>
-        <a href="mailto:kuchisrikar05@gmail.com">
-            <span class="material-symbols-outlined" style="font-size:20px">mail</span>
-            <span class="label">Mail</span>
+        <a href="mailto:kuchisrikar05@gmail.com" aria-label="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.2s ease;">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <span class="label" style="margin-top: 2px;">Mail</span>
+        </a>
+        <a href="tel:+919346124421" aria-label="Call">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.2s ease;">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span class="label" style="margin-top: 2px;">Call</span>
         </a>
     </aside>
 
@@ -548,21 +1133,25 @@
 
         <!-- ─── HERO ─── -->
         <section id="home" class="section" style="padding-top: 120px; padding-bottom: 80px;">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center" style="min-height: calc(100vh - 200px);">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+                style="min-height: calc(100vh - 200px);">
                 <!-- Left: Text -->
                 <div>
                     <div class="hero-badge glass">
-                        <span class="glow-dot" style="width:8px;height:8px;border-radius:50%;background:var(--cyan);display:inline-block;"></span>
+                        <span class="glow-dot"
+                            style="width:8px;height:8px;border-radius:50%;background:var(--cyan);display:inline-block;"></span>
                         Building at the edge of Finance × AI
                     </div>
-                    <h1 class="display">Hi, I'm<br/><span class="glow-cyan" style="color:var(--cyan);">Srikar Kuchi</span></h1>
+                    <h1 class="display">Hi, I'm <br /><span class="glow-cyan" style="color:var(--cyan);">Srikar
+                            Kuchi</span></h1>
                     <p style="font-size:18px; color:#bbc9cf; line-height:1.7; margin:24px 0 36px; max-width:480px;">
-                        AI Product Builder &mdash; BCA Graduate &amp; CA Intermediate.<br/>
+                        AI Product Builder &mdash; BCA Graduate &amp; CA Intermediate.<br />
                         Crafting intelligent software at the intersection of Finance, Automation and Technology.
                     </p>
                     <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:48px;">
                         <a href="#projects" class="btn-sm primary" style="padding:14px 28px; font-size:12px;">
-                            <span class="material-symbols-outlined" style="font-size:16px">grid_view</span> View Projects
+                            <span class="material-symbols-outlined" style="font-size:16px">grid_view</span> View
+                            Projects
                         </a>
                         <a href="#contact" class="btn-sm ghost" style="padding:14px 28px; font-size:12px;">
                             <span class="material-symbols-outlined" style="font-size:16px">send</span> Let's Talk
@@ -584,25 +1173,85 @@
                         </div>
                     </div>
                 </div>
-                <!-- Right: Floating Visual -->
+                <!-- Right: Holographic Visual Dashboard -->
                 <div style="display:flex; justify-content:center; align-items:center; position:relative; height:500px;">
-                    <!-- Rings -->
-                    <div style="position:absolute; width:320px; height:320px; border-radius:50%; border:1px solid rgba(0,209,255,0.12); animation: float 6s ease-in-out infinite;"></div>
-                    <div style="position:absolute; width:420px; height:420px; border-radius:50%; border:1px solid rgba(0,209,255,0.06); animation: float 6s ease-in-out infinite; animation-delay: 1s;"></div>
-                    <div style="position:absolute; width:220px; height:220px; border-radius:50%; border:1px solid rgba(0,209,255,0.2); animation: float 4s ease-in-out infinite; animation-delay:0.5s;"></div>
-                    <!-- Center Icon -->
-                    <span class="material-symbols-outlined" style="font-size:100px; color:var(--cyan); filter:drop-shadow(0 0 40px rgba(0,209,255,0.8)); position:relative; z-index:2;">robot_2</span>
-                    <!-- Floating Cards -->
-                    <div class="glass" style="position:absolute; top:60px; right:20px; padding:16px 20px; border-radius:16px; min-width:160px; animation:float 5s ease-in-out infinite;">
-                        <div style="font-size:10px; color:#859399; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Latest Project</div>
-                        <div style="font-size:14px; font-weight:700; font-family:'Geist',sans-serif; color:var(--cyan-dim);">FinMatrix</div>
-                        <div style="font-size:11px; color:#859399;">AI Finance Platform</div>
+                    <!-- Ambient Glow Behind -->
+                    <div style="position:absolute; width:300px; height:300px; border-radius:50%; background:rgba(0,209,255,0.06); filter:blur(80px); animation: float 8s ease-in-out infinite;"></div>
+                    <div style="position:absolute; width:260px; height:260px; border-radius:50%; background:rgba(194,193,255,0.04); filter:blur(60px); animation: float 6s ease-in-out infinite; animation-delay:2s;"></div>
+
+                    <!-- Holographic Interface Console -->
+                    <div class="glass-strong holo-card scanline" style="width:380px; height:340px; border-radius:24px; padding:24px; display:flex; flex-direction:column; gap:16px; position:relative; z-index:2; box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 40px rgba(0,209,255,0.05); border: 1px solid rgba(0,209,255,0.18);">
+                        <!-- Console Header -->
+                        <div style="display:flex; justify-content:between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:12px; font-family: monospace; font-size:11px; letter-spacing:0.05em; width: 100%;">
+                            <div style="display:flex; align-items:center; gap:8px;">
+                                <span class="glow-dot" style="width:6px; height:6px; border-radius:50%; background:#00e676; display:inline-block; filter:drop-shadow(0 0 3px #00e676);"></span>
+                                <span style="color:#e5e2e1; font-weight:700;">HOLO_CORE_v1.9</span>
+                            </div>
+                            <div style="color:var(--cyan-dim); margin-left: auto;">SYS_STATUS: ACTIVE</div>
+                        </div>
+
+                        <!-- Console Inner Content: Stats & Diagnostic SVG Radar -->
+                        <div style="display:flex; flex:1; gap:16px; align-items:center; width: 100%;">
+                            <!-- Diagnostic Radar Sweep (SVG) -->
+                            <div style="position:relative; width:110px; height:110px; flex-shrink:0; display:flex; align-items:center; justify-content:center;">
+                                <svg width="100" height="100" viewBox="0 0 100 100" style="transform: rotate(-90deg);">
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(0, 209, 255, 0.12)" stroke-width="1" />
+                                    <circle cx="50" cy="50" r="30" fill="none" stroke="rgba(0, 209, 255, 0.08)" stroke-width="1" stroke-dasharray="4 4" />
+                                    <circle cx="50" cy="50" r="15" fill="none" stroke="rgba(0, 209, 255, 0.12)" stroke-width="1" />
+                                    <!-- Crosshairs -->
+                                    <line x1="50" y1="5" x2="50" y2="95" stroke="rgba(0, 209, 255, 0.1)" stroke-width="0.5" />
+                                    <line x1="5" y1="50" x2="95" y2="50" stroke="rgba(0, 209, 255, 0.1)" stroke-width="0.5" />
+                                    <!-- Radar hand -->
+                                    <line x1="50" y1="50" x2="85" y2="20" stroke="var(--cyan)" stroke-width="1.5" style="transform-origin: 50px 50px; animation: spin-btn 4s linear infinite;" />
+                                    <!-- Little target blip -->
+                                    <circle cx="75" cy="40" r="3" fill="#00e676" style="animation: pulse-dot 1.5s infinite;" />
+                                </svg>
+                                <span class="material-symbols-outlined" style="position:absolute; font-size:24px; color:var(--cyan); filter:drop-shadow(0 0 8px var(--cyan));">psychology</span>
+                            </div>
+
+                            <!-- System Status Console Log text -->
+                            <div style="font-family:monospace; font-size:11px; color:#859399; line-height:1.6; display:flex; flex-direction:column; gap:6px;">
+                                <div><span style="color:var(--cyan); font-weight:700;">&gt;</span> PIPELINE: <span style="color:#e5e2e1;">FinTech / AI</span></div>
+                                <div><span style="color:var(--cyan); font-weight:700;">&gt;</span> COMPILER: <span style="color:#e5e2e1;">FAST_API</span></div>
+                                <div><span style="color:var(--cyan); font-weight:700;">&gt;</span> NEURAL_NET: <span style="color:#00e676;">ONLINE</span></div>
+                                <div><span style="color:var(--cyan); font-weight:700;">&gt;</span> OPTIMIZER: <span style="color:var(--cyan-dim);">HEURISTICS_v2</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Real-time Holographic Metric Chart (SVG) -->
+                        <div style="border-top:1px solid rgba(255,255,255,0.06); padding-top:12px; display:flex; flex-direction:column; gap:6px; width: 100%;">
+                            <div style="display:flex; justify-content:space-between; font-family:monospace; font-size:9px; color:#859399;">
+                                <span>DATA THREAD REALTIME FEED</span>
+                                <span style="color:var(--cyan); animation: pulse-dot 1s ease-in-out infinite;">LIVE</span>
+                            </div>
+                            <svg width="100%" height="45" viewBox="0 0 300 45" preserveAspectRatio="none">
+                                <defs>
+                                    <linearGradient id="chart-grad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="rgba(0, 209, 255, 0.4)" />
+                                        <stop offset="100%" stop-color="rgba(0, 209, 255, 0)" />
+                                    </linearGradient>
+                                </defs>
+                                <!-- Area under path -->
+                                <path d="M 0 45 L 0 30 Q 30 15 60 28 T 120 10 T 180 35 T 240 15 T 300 25 L 300 45 Z" fill="url(#chart-grad)" />
+                                <!-- Path line -->
+                                <path d="M 0 30 Q 30 15 60 28 T 120 10 T 180 35 T 240 15 T 300 25" fill="none" stroke="var(--cyan)" stroke-width="2" style="filter:drop-shadow(0 0 3px rgba(0, 209, 255, 0.5));" />
+                            </svg>
+                        </div>
                     </div>
-                    <div class="glass" style="position:absolute; bottom:80px; left:20px; padding:16px 20px; border-radius:16px; min-width:160px; animation:float 5s ease-in-out infinite; animation-delay:2s;">
-                        <div style="font-size:10px; color:#859399; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px;">Status</div>
+
+                    <!-- Floating Badge: Latest Project -->
+                    <div class="glass holo-card" style="position:absolute; top:40px; right:-20px; padding:14px 18px; border-radius:14px; min-width:150px; z-index:3; animation:float 5s ease-in-out infinite; border: 1px solid rgba(0,209,255,0.2);">
+                        <div style="font-size:9px; color:#859399; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:4px;">Latest Project</div>
+                        <div style="font-size:13px; font-weight:700; font-family:'Geist',sans-serif; color:var(--cyan-dim);">FinMatrix</div>
+                        <div style="font-size:10px; color:#859399;">AI Financial Agent</div>
+                    </div>
+
+                    <!-- Floating Badge: Status -->
+                    <div class="glass holo-card" style="position:absolute; bottom:50px; left:-20px; padding:14px 18px; border-radius:14px; min-width:150px; z-index:3; animation:float 5s ease-in-out infinite; animation-delay:2.5s; border: 1px solid rgba(0,209,255,0.2);">
+                        <div style="font-size:9px; color:#859399; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:4px;">Identity Status</div>
                         <div style="display:flex; align-items:center; gap:8px;">
-                            <span style="width:8px;height:8px;border-radius:50%;background:#00e676;box-shadow:0 0 8px #00e676;display:inline-block;"></span>
-                            <span style="font-size:13px; font-weight:600; color:#e5e2e1;">Open for Work</span>
+                            <span style="width:7px; height:7px; border-radius:50%; background:#00e676; box-shadow:0 0 6px #00e676; display:inline-block; animation: pulse-dot 2s infinite;"></span>
+                            <span style="font-size:12px; font-weight:600; color:#e5e2e1; font-family:'Geist',sans-serif;">Open to Work</span>
                         </div>
                     </div>
                 </div>
@@ -623,27 +1272,45 @@
                 <!-- Left: Sticky Card -->
                 <div style="position:sticky; top:120px;">
                     <div class="glass-strong" style="border-radius:24px; padding:32px; margin-bottom:20px;">
-                        <div style="width:100%; aspect-ratio: 3/4; border-radius:20px; margin-bottom:24px; position:relative; overflow:hidden; border:2px solid rgba(0,209,255,0.3); box-shadow: 0 0 50px rgba(0,209,255,0.2), 0 20px 60px rgba(0,0,0,0.6);">
-                            <img src="profile.jpg?v=2" alt="Srikar Kuchi" style="width:100%; height:100%; object-fit:cover; object-position: center 15%; display:block; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/>
-                            <div style="position:absolute; inset:0; background:linear-gradient(to bottom, transparent 55%, rgba(19,19,19,0.85) 100%); pointer-events:none;"></div>
+                        <div
+                            style="width:100%; aspect-ratio: 3/4; border-radius:20px; margin-bottom:24px; position:relative; overflow:hidden; border:2px solid rgba(0,209,255,0.3); box-shadow: 0 0 50px rgba(0,209,255,0.2), 0 20px 60px rgba(0,0,0,0.6);">
+                            <img src="profile.jpg?v=2" alt="Srikar Kuchi"
+                                style="width:100%; height:100%; object-fit:cover; object-position: center 15%; display:block; transition: transform 0.5s ease;"
+                                onmouseover="this.style.transform='scale(1.04)'"
+                                onmouseout="this.style.transform='scale(1)'" />
+                            <div
+                                style="position:absolute; inset:0; background:linear-gradient(to bottom, transparent 55%, rgba(19,19,19,0.85) 100%); pointer-events:none;">
+                            </div>
                             <!-- Name overlay at bottom of image -->
-                            <div style="position:absolute; bottom:0; left:0; right:0; padding:20px; pointer-events:none;">
-                                <div style="font-family:'Geist',sans-serif; font-size:18px; font-weight:800; letter-spacing:-0.02em; color:#e5e2e1;">Srikar Kuchi</div>
-                                <div style="font-size:11px; color:var(--cyan-dim); letter-spacing:0.1em; text-transform:uppercase; margin-top:2px;">AI Product Builder</div>
+                            <div
+                                style="position:absolute; bottom:0; left:0; right:0; padding:20px; pointer-events:none;">
+                                <div
+                                    style="font-family:'Geist',sans-serif; font-size:18px; font-weight:800; letter-spacing:-0.02em; color:#e5e2e1;">
+                                    Srikar Kuchi</div>
+                                <div
+                                    style="font-size:11px; color:var(--cyan-dim); letter-spacing:0.1em; text-transform:uppercase; margin-top:2px;">
+                                    AI Product Builder</div>
                             </div>
                         </div>
-                        <h3 style="font-family:'Geist',sans-serif;font-size:24px;font-weight:700;letter-spacing:-0.02em;color:var(--cyan-dim);margin-bottom:6px;">Srikar Kuchi</h3>
-                        <p style="font-size:13px;color:#859399;margin-bottom:24px;">AI Product Builder · BCA · CA Intermediate</p>
+                        <h3
+                            style="font-family:'Geist',sans-serif;font-size:24px;font-weight:700;letter-spacing:-0.02em;color:var(--cyan-dim);margin-bottom:6px;">
+                            Srikar Kuchi</h3>
+                        <p style="font-size:13px;color:#859399;margin-bottom:24px;">AI Product Builder · BCA · CA
+                            Intermediate</p>
                         <div class="glass" style="padding:16px; border-radius:14px;">
-                            <p style="font-size:13px;color:#bbc9cf;line-height:1.7;font-style:italic;">"Technology should simplify business. I combine finance, AI and automation to build products that help people work smarter."</p>
+                            <p style="font-size:13px;color:#bbc9cf;line-height:1.7;font-style:italic;">"Technology
+                                should simplify business. I combine finance, AI and automation to build products that
+                                help people work smarter."</p>
                         </div>
                     </div>
                     <!-- Social Links -->
                     <div style="display:flex; gap:10px;">
-                        <a href="https://github.com/SK0705" target="_blank" class="btn-sm ghost" style="flex:1;justify-content:center;">
+                        <a href="https://github.com/SK0705" target="_blank" class="btn-sm ghost"
+                            style="flex:1;justify-content:center;">
                             <span class="material-symbols-outlined" style="font-size:16px">code</span> GitHub
                         </a>
-                        <a href="https://linkedin.com/in/sk1377" target="_blank" class="btn-sm ghost" style="flex:1;justify-content:center;">
+                        <a href="https://linkedin.com/in/sk1377" target="_blank" class="btn-sm ghost"
+                            style="flex:1;justify-content:center;">
                             <span class="material-symbols-outlined" style="font-size:16px">link</span> LinkedIn
                         </a>
                     </div>
@@ -651,26 +1318,41 @@
                 <!-- Right: Text -->
                 <div>
                     <span class="section-label">Professional Identity</span>
-                    <h2 class="section-title" style="margin-bottom:32px;">Who <span style="color:var(--cyan);">I Am</span></h2>
-                    <div style="display:flex; flex-direction:column; gap:20px; color:#bbc9cf; font-size:16px; line-height:1.75;">
-                        <p>I am a <strong style="color:#e5e2e1;">Bachelor of Computer Applications (BCA) graduate</strong> with a CGPA of 7.95, currently pursuing <strong style="color:#e5e2e1;">CA Intermediate</strong>. My passion lies in combining financial knowledge with artificial intelligence to build practical solutions.</p>
-                        <p>I believe the future belongs to professionals who understand both <strong style="color:var(--cyan-dim);">Finance and Technology</strong>. I use AI-assisted development to transform business ideas into functional, scalable digital products.</p>
-                        <p>My strengths lie in understanding business problems, designing elegant solutions, and continuously learning new technologies at a rapid pace.</p>
+                    <h2 class="section-title" style="margin-bottom:32px;">Who <span style="color:var(--cyan);">I
+                            Am</span></h2>
+                    <div
+                        style="display:flex; flex-direction:column; gap:20px; color:#bbc9cf; font-size:16px; line-height:1.75;">
+                        <p>I am a <strong style="color:#e5e2e1;">Bachelor of Computer Applications (BCA)
+                                graduate</strong> with a CGPA of 7.95, currently pursuing <strong
+                                style="color:#e5e2e1;">CA Intermediate</strong>. My passion lies in combining financial
+                            knowledge with artificial intelligence to build practical solutions.</p>
+                        <p>I believe the future belongs to professionals who understand both <strong
+                                style="color:var(--cyan-dim);">Finance and Technology</strong>. I use AI-assisted
+                            development to transform business ideas into functional, scalable digital products.</p>
+                        <p>My strengths lie in understanding business problems, designing elegant solutions, and
+                            continuously learning new technologies at a rapid pace.</p>
                     </div>
                     <!-- Education / Certs -->
                     <div style="margin-top:40px; display:flex; flex-direction:column; gap:14px;">
-                        <div class="glass" style="border-radius:14px; padding:18px 22px; display:flex; align-items:center; gap:16px;">
-                            <span class="material-symbols-outlined" style="color:var(--cyan); font-size:24px;">school</span>
+                        <div class="glass"
+                            style="border-radius:14px; padding:18px 22px; display:flex; align-items:center; gap:16px;">
+                            <span class="material-symbols-outlined"
+                                style="color:var(--cyan); font-size:24px;">school</span>
                             <div>
-                                <div style="font-size:14px; font-weight:600; color:#e5e2e1;">Bachelor of Computer Applications</div>
-                                <div style="font-size:12px; color:#859399; margin-top:2px;">CGPA: 7.95 &nbsp;·&nbsp; 2022–2025</div>
+                                <div style="font-size:14px; font-weight:600; color:#e5e2e1;">Bachelor of Computer
+                                    Applications</div>
+                                <div style="font-size:12px; color:#859399; margin-top:2px;">CGPA: 7.95 &nbsp;·&nbsp;
+                                    2023–2026</div>
                             </div>
                         </div>
-                        <div class="glass" style="border-radius:14px; padding:18px 22px; display:flex; align-items:center; gap:16px;">
-                            <span class="material-symbols-outlined" style="color:var(--cyan); font-size:24px;">calculate</span>
+                        <div class="glass"
+                            style="border-radius:14px; padding:18px 22px; display:flex; align-items:center; gap:16px;">
+                            <span class="material-symbols-outlined"
+                                style="color:var(--cyan); font-size:24px;">calculate</span>
                             <div>
                                 <div style="font-size:14px; font-weight:600; color:#e5e2e1;">CA Intermediate</div>
-                                <div style="font-size:12px; color:#859399; margin-top:2px;">Institute of Chartered Accountants of India &nbsp;·&nbsp; In Progress</div>
+                                <div style="font-size:12px; color:#859399; margin-top:2px;">Institute of Chartered
+                                    Accountants of India &nbsp;·&nbsp; In Progress</div>
                             </div>
                         </div>
                     </div>
@@ -682,74 +1364,131 @@
         <div class="divider"></div>
         <section id="skills" class="section" style="padding-bottom:100px;">
             <span class="section-label">Capability Matrix</span>
-            <h2 class="section-title" style="margin-bottom:56px;">Tech <span style="color:var(--cyan);">Stack</span></h2>
+            <h2 class="section-title" style="margin-bottom:56px;">Tech <span style="color:var(--cyan);">Stack</span>
+            </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Core Languages -->
-                <div class="glass-strong" style="border-radius:20px; padding:28px;">
-                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
-                        <span class="material-symbols-outlined" style="color:var(--cyan);">terminal</span>
-                        <span style="font-family:'Geist',sans-serif; font-size:16px; font-weight:700;">Core Languages</span>
+                <div class="holo-card scanline" style="border-radius:24px; padding:32px;">
+                    <div style="display:flex; align-items:center; gap:12px; margin-bottom:28px;">
+                        <span class="material-symbols-outlined" style="color:var(--cyan); font-size:24px; filter:drop-shadow(0 0 5px rgba(0,209,255,0.4));">terminal</span>
+                        <span style="font-family:'Geist',sans-serif; font-size:16px; font-weight:800; letter-spacing:-0.01em;">Core Languages</span>
                     </div>
-                    <div style="display:flex; flex-direction:column; gap:20px;">
-                        <div>
-                            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
-                                <span style="font-size:14px; font-weight:600; color:#e5e2e1;">Python</span>
-                                <span style="font-size:12px; color:var(--cyan); font-family:'Geist',sans-serif;">85%</span>
+                    <div style="display:flex; flex-direction:column; gap:24px;">
+                        <!-- Python -->
+                        <div style="display:flex; align-items:center; gap:16px;">
+                            <div style="position:relative; width:52px; height:52px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                <svg width="52" height="52" viewBox="0 0 52 52">
+                                    <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="2" />
+                                    <circle cx="26" cy="26" r="22" fill="none" stroke="var(--cyan)" stroke-width="3.5" 
+                                            stroke-dasharray="138" stroke-dashoffset="20.7" 
+                                            stroke-linecap="round" style="transform: rotate(-90deg); transform-origin: 50% 50%; filter: drop-shadow(0 0 4px var(--cyan));" />
+                                </svg>
+                                <span style="position:absolute; font-family:'monospace'; font-size:10px; font-weight:700; color:#e5e2e1;">85%</span>
                             </div>
-                            <div class="skill-bar-track"><div class="skill-bar-fill" style="width:85%"></div></div>
+                            <div>
+                                <h4 style="font-size:14px; font-weight:700; color:#e5e2e1; margin-bottom:1px;">Python</h4>
+                                <p style="font-size:11px; color:#859399;">System core &amp; automation scripts</p>
+                            </div>
                         </div>
-                        <div>
-                            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
-                                <span style="font-size:14px; font-weight:600; color:#e5e2e1;">JavaScript / HTML / CSS</span>
-                                <span style="font-size:12px; color:var(--cyan); font-family:'Geist',sans-serif;">80%</span>
+                        <!-- JS/HTML/CSS -->
+                        <div style="display:flex; align-items:center; gap:16px;">
+                            <div style="position:relative; width:52px; height:52px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                <svg width="52" height="52" viewBox="0 0 52 52">
+                                    <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="2" />
+                                    <circle cx="26" cy="26" r="22" fill="none" stroke="var(--cyan)" stroke-width="3.5" 
+                                            stroke-dasharray="138" stroke-dashoffset="27.6" 
+                                            stroke-linecap="round" style="transform: rotate(-90deg); transform-origin: 50% 50%; filter: drop-shadow(0 0 4px var(--cyan));" />
+                                </svg>
+                                <span style="position:absolute; font-family:'monospace'; font-size:10px; font-weight:700; color:#e5e2e1;">80%</span>
                             </div>
-                            <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Domain -->
-                <div class="glass-strong" style="border-radius:20px; padding:28px; margin-top:30px;">
-                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
-                        <span class="material-symbols-outlined" style="color:var(--cyan);">analytics</span>
-                        <span style="font-family:'Geist',sans-serif; font-size:16px; font-weight:700;">Domain Expertise</span>
-                    </div>
-                    <div style="display:flex; flex-direction:column; gap:20px;">
-                        <div>
-                            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
-                                <span style="font-size:14px; font-weight:600; color:#e5e2e1;">FinTech &amp; Finance</span>
-                                <span style="font-size:12px; color:var(--cyan); font-family:'Geist',sans-serif;">95%</span>
+                            <div>
+                                <h4 style="font-size:14px; font-weight:700; color:#e5e2e1; margin-bottom:1px;">JS / HTML / CSS</h4>
+                                <p style="font-size:11px; color:#859399;">Frontend structures &amp; interactions</p>
                             </div>
-                            <div class="skill-bar-track"><div class="skill-bar-fill" style="width:95%"></div></div>
-                        </div>
-                        <div>
-                            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
-                                <span style="font-size:14px; font-weight:600; color:#e5e2e1;">Process Optimization</span>
-                                <span style="font-size:12px; color:var(--cyan); font-family:'Geist',sans-serif;">90%</span>
-                            </div>
-                            <div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div>
                         </div>
                     </div>
                 </div>
-                <!-- AI -->
-                <div class="glass-strong" style="border-radius:20px; padding:28px;">
-                    <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
-                        <span class="material-symbols-outlined" style="color:var(--cyan);">psychology</span>
-                        <span style="font-family:'Geist',sans-serif; font-size:16px; font-weight:700;">AI &amp; Intelligence</span>
+
+                <!-- Domain Expertise -->
+                <div class="holo-card scanline" style="border-radius:24px; padding:32px;">
+                    <div style="display:flex; align-items:center; gap:12px; margin-bottom:28px;">
+                        <span class="material-symbols-outlined" style="color:var(--cyan); font-size:24px; filter:drop-shadow(0 0 5px rgba(0,209,255,0.4));">analytics</span>
+                        <span style="font-family:'Geist',sans-serif; font-size:16px; font-weight:800; letter-spacing:-0.01em;">Domain Expertise</span>
                     </div>
-                    <div style="display:flex; flex-direction:column; gap:20px;">
-                        <div>
-                            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
-                                <span style="font-size:14px; font-weight:600; color:#e5e2e1;">AI / ML Automation</span>
-                                <span style="font-size:12px; color:var(--cyan); font-family:'Geist',sans-serif;">92%</span>
+                    <div style="display:flex; flex-direction:column; gap:24px;">
+                        <!-- FinTech -->
+                        <div style="display:flex; align-items:center; gap:16px;">
+                            <div style="position:relative; width:52px; height:52px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                <svg width="52" height="52" viewBox="0 0 52 52">
+                                    <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="2" />
+                                    <circle cx="26" cy="26" r="22" fill="none" stroke="var(--cyan)" stroke-width="3.5" 
+                                            stroke-dasharray="138" stroke-dashoffset="6.9" 
+                                            stroke-linecap="round" style="transform: rotate(-90deg); transform-origin: 50% 50%; filter: drop-shadow(0 0 4px var(--cyan));" />
+                                </svg>
+                                <span style="position:absolute; font-family:'monospace'; font-size:10px; font-weight:700; color:#e5e2e1;">95%</span>
                             </div>
-                            <div class="skill-bar-track"><div class="skill-bar-fill" style="width:92%"></div></div>
+                            <div>
+                                <h4 style="font-size:14px; font-weight:700; color:#e5e2e1; margin-bottom:1px;">FinTech &amp; Finance</h4>
+                                <p style="font-size:11px; color:#859399;">Statements, analysis &amp; modeling</p>
+                            </div>
                         </div>
-                        <div>
-                            <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
-                                <span style="font-size:14px; font-weight:600; color:var(--cyan-dim);">AI-Assisted Dev</span>
-                                <span style="font-size:12px; color:var(--cyan); font-family:'Geist',sans-serif;">95%</span>
+                        <!-- Process Optimization -->
+                        <div style="display:flex; align-items:center; gap:16px;">
+                            <div style="position:relative; width:52px; height:52px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                <svg width="52" height="52" viewBox="0 0 52 52">
+                                    <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="2" />
+                                    <circle cx="26" cy="26" r="22" fill="none" stroke="var(--cyan)" stroke-width="3.5" 
+                                            stroke-dasharray="138" stroke-dashoffset="13.8" 
+                                            stroke-linecap="round" style="transform: rotate(-90deg); transform-origin: 50% 50%; filter: drop-shadow(0 0 4px var(--cyan));" />
+                                </svg>
+                                <span style="position:absolute; font-family:'monospace'; font-size:10px; font-weight:700; color:#e5e2e1;">90%</span>
                             </div>
-                            <div class="skill-bar-track"><div class="skill-bar-fill" style="width:95%; background:linear-gradient(to right, rgba(164,230,255,0.5), var(--cyan-dim));"></div></div>
+                            <div>
+                                <h4 style="font-size:14px; font-weight:700; color:#e5e2e1; margin-bottom:1px;">Process Optimization</h4>
+                                <p style="font-size:11px; color:#859399;">Business workflow automations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI & Intelligence -->
+                <div class="holo-card scanline" style="border-radius:24px; padding:32px;">
+                    <div style="display:flex; align-items:center; gap:12px; margin-bottom:28px;">
+                        <span class="material-symbols-outlined" style="color:var(--cyan); font-size:24px; filter:drop-shadow(0 0 5px rgba(0,209,255,0.4));">psychology</span>
+                        <span style="font-family:'Geist',sans-serif; font-size:16px; font-weight:800; letter-spacing:-0.01em;">AI &amp; Intelligence</span>
+                    </div>
+                    <div style="display:flex; flex-direction:column; gap:24px;">
+                        <!-- AI/ML Automation -->
+                        <div style="display:flex; align-items:center; gap:16px;">
+                            <div style="position:relative; width:52px; height:52px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                <svg width="52" height="52" viewBox="0 0 52 52">
+                                    <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="2" />
+                                    <circle cx="26" cy="26" r="22" fill="none" stroke="var(--cyan)" stroke-width="3.5" 
+                                            stroke-dasharray="138" stroke-dashoffset="11.0" 
+                                            stroke-linecap="round" style="transform: rotate(-90deg); transform-origin: 50% 50%; filter: drop-shadow(0 0 4px var(--cyan));" />
+                                </svg>
+                                <span style="position:absolute; font-family:'monospace'; font-size:10px; font-weight:700; color:#e5e2e1;">92%</span>
+                            </div>
+                            <div>
+                                <h4 style="font-size:14px; font-weight:700; color:#e5e2e1; margin-bottom:1px;">AI / ML Automation</h4>
+                                <p style="font-size:11px; color:#859399;">Prompt engineering &amp; agents integration</p>
+                            </div>
+                        </div>
+                        <!-- AI-Assisted Dev -->
+                        <div style="display:flex; align-items:center; gap:16px;">
+                            <div style="position:relative; width:52px; height:52px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                <svg width="52" height="52" viewBox="0 0 52 52">
+                                    <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="2" />
+                                    <circle cx="26" cy="26" r="22" fill="none" stroke="var(--cyan)" stroke-width="3.5" 
+                                            stroke-dasharray="138" stroke-dashoffset="6.9" 
+                                            stroke-linecap="round" style="transform: rotate(-90deg); transform-origin: 50% 50%; filter: drop-shadow(0 0 4px var(--cyan));" />
+                                </svg>
+                                <span style="position:absolute; font-family:'monospace'; font-size:10px; font-weight:700; color:#e5e2e1;">95%</span>
+                            </div>
+                            <div>
+                                <h4 style="font-size:14px; font-weight:700; color:#e5e2e1; margin-bottom:1px;">AI-Assisted Dev</h4>
+                                <p style="font-size:11px; color:#859399;">Accelerated workflow prototyping</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -768,186 +1507,308 @@
 
         <!-- ─── PROJECTS ─── -->
         <div class="divider"></div>
-        <section id="projects" class="section" style="padding-bottom:100px;">
-            <span class="section-label">Portfolio Archive</span>
-            <h2 class="section-title" style="margin-bottom:12px;">What I <span style="color:var(--cyan);">Build</span></h2>
-            <p style="color:#859399; font-size:16px; margin-bottom:48px; max-width:500px;">Turning ambitious ideas at the intersection of finance and AI into real, working products.</p>
+        <div id="projects-scroll-container" style="height: 320vh; position: relative;">
+            <section id="projects" class="section" style="position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 0; padding-bottom: 0; overflow: hidden; margin: 0 auto;">
+                <span class="section-label">Portfolio Archive</span>
+                <h2 class="section-title" style="margin-bottom:12px;">What I <span style="color:var(--cyan);">Build</span>
+                </h2>
+                <p style="color:#859399; font-size:16px; margin-bottom:20px; max-width:500px;">Turning ambitious ideas at
+                    the intersection of finance and AI into real, working products.</p>
 
-            <!-- Bento Grid -->
-            <div class="bento-grid">
+                <!-- 3D Circular Carousel Container -->
+                <div class="carousel-3d-container" style="margin: 20px 0;">
+                <button class="carousel-btn prev" id="carousel-prev" aria-label="Previous Project">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
 
-                <!-- FinMatrix — Wide Featured Card -->
-                <div class="project-card glass-strong bento-card-wide" style="border-radius:24px; padding:0; overflow:hidden; flex-direction:column;">
-                    <!-- Accent header band -->
-                    <div style="height:5px; background:linear-gradient(to right, var(--cyan), var(--cyan-dim), transparent);"></div>
-                    <div style="padding:32px 36px; display:flex; flex-direction:column; gap:20px; height:100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-                            <div style="display:flex; flex-direction:column; gap:12px;">
-                                <div style="width:52px;height:52px;border-radius:14px;background:rgba(0,209,255,0.12);border:1px solid rgba(0,209,255,0.25);display:flex;align-items:center;justify-content:center;">
-                                    <span class="material-symbols-outlined" style="color:var(--cyan);font-size:26px;">account_balance</span>
+                <div class="carousel-3d-scene">
+                    <div class="carousel-3d-track" id="carousel-track">
+
+                        <!-- FinMatrix — Featured Card -->
+                        <div class="project-card holo-card scanline carousel-item" data-index="0"
+                            style="--glow-color: rgba(0, 209, 255, 0.16); --theme-color: var(--cyan); border-radius:24px; padding:0; overflow:hidden; flex-direction:column;">
+                            <!-- Accent header band -->
+                            <div
+                                style="height:5px; background:linear-gradient(to right, var(--cyan), var(--cyan-dim), transparent);">
+                            </div>
+                            <div style="padding:32px 36px; display:flex; flex-direction:column; gap:20px; height:100%; position:relative; z-index:2;">
+                                <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                                    <div style="display:flex; flex-direction:column; gap:12px;">
+                                        <div
+                                            style="width:52px;height:52px;border-radius:14px;background:rgba(0,209,255,0.08);border:1px solid rgba(0,209,255,0.2);display:flex;align-items:center;justify-content:center;box-shadow: 0 0 10px rgba(0, 209, 255, 0.15);">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                                            </svg>
+                                        </div>
+                                        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                            <span class="project-tag featured" style="border-color:rgba(0,209,255,0.3); background:rgba(0,209,255,0.08);">Flagship</span>
+                                            <span class="project-tag">Finance</span>
+                                            <span class="project-tag">AI Agent</span>
+                                        </div>
+                                    </div>
+                                    <div style="display:flex; flex-direction:column; align-items:flex-end;">
+                                        <div style="font-family:monospace; font-size:10px; color:rgba(0,209,255,0.4); letter-spacing:0.05em; margin-bottom:2px;">[REG_SYS-01]</div>
+                                        <div style="font-size:60px;line-height:1;font-family:'Geist',sans-serif;font-weight:800;color:rgba(0,209,255,0.04);letter-spacing:-0.04em;user-select:none;">01</div>
+                                    </div>
                                 </div>
-                                <div style="display:flex;gap:8px;flex-wrap:wrap;">
-                                    <span class="project-tag featured">Flagship</span>
-                                    <span class="project-tag">Finance</span>
-                                    <span class="project-tag">AI</span>
+                                <div>
+                                    <h3 class="text-glow-cyan"
+                                        style="font-family:'Geist',sans-serif;font-size:28px;font-weight:800;letter-spacing:-0.03em;color:#e5e2e1;margin-bottom:10px;">
+                                        FinMatrix</h3>
+                                    <p style="color:#859399;font-size:14px;line-height:1.8;margin-bottom:24px;">An AI-powered
+                                        financial statement platform automating Balance Sheets, P&amp;L Statements, and Cash
+                                        Flow analysis — end-to-end financial reporting at scale.</p>
+                                    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+                                        <a href="https://finamtrix-mvp.vercel.app/" target="_blank" class="btn-sm primary" style="background:rgba(0,209,255,0.12); border-color:rgba(0,209,255,0.3);"><span
+                                                class="material-symbols-outlined" style="font-size:14px">rocket_launch</span>
+                                            Live Demo</a>
+                                        <a href="https://github.com/SK0705/finamtrix_mvp" target="_blank"
+                                            class="btn-sm ghost"><span class="material-symbols-outlined"
+                                                style="font-size:14px">code</span> GitHub</a>
+                                    </div>
                                 </div>
                             </div>
-                            <div style="font-size:80px;line-height:1;font-family:'Geist',sans-serif;font-weight:800;color:rgba(0,209,255,0.06);letter-spacing:-0.04em;user-select:none;">01</div>
                         </div>
-                        <div>
-                            <h3 style="font-family:'Geist',sans-serif;font-size:30px;font-weight:800;letter-spacing:-0.03em;color:#e5e2e1;margin-bottom:10px;">FinMatrix</h3>
-                            <p style="color:#859399;font-size:14px;line-height:1.8;margin-bottom:24px;">An AI-powered financial statement platform automating Balance Sheets, P&amp;L Statements, and Cash Flow analysis — end-to-end financial reporting at scale.</p>
-                            <div style="display:flex;gap:10px;flex-wrap:wrap;">
-                                <a href="https://finamtrix-mvp.vercel.app/" target="_blank" class="btn-sm primary"><span class="material-symbols-outlined" style="font-size:14px">rocket_launch</span> Live Demo</a>
-                                <a href="https://github.com/SK0705/finamtrix_mvp" target="_blank" class="btn-sm ghost"><span class="material-symbols-outlined" style="font-size:14px">code</span> GitHub</a>
+
+                        <!-- Maverick OS -->
+                        <div class="project-card holo-card scanline carousel-item" data-index="1"
+                            style="--glow-color: rgba(194, 193, 255, 0.16); --theme-color: var(--secondary); border-radius:24px; padding:0; overflow:hidden; flex-direction:column;">
+                            <div style="height:5px; background:linear-gradient(to right, rgba(194,193,255,0.8), transparent);">
+                            </div>
+                            <div style="padding:28px; display:flex; flex-direction:column; gap:16px; height:100%; position:relative; z-index:2;">
+                                <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                                    <div
+                                        style="width:48px;height:48px;border-radius:14px;background:rgba(194,193,255,0.08);border:1px solid rgba(194,193,255,0.2);display:flex;align-items:center;justify-content:center;box-shadow: 0 0 10px rgba(194, 193, 255, 0.15);">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="4 17 10 11 4 5"></polyline>
+                                            <line x1="12" y1="19" x2="20" y2="19"></line>
+                                        </svg>
+                                    </div>
+                                    <div style="display:flex; flex-direction:column; align-items:flex-end;">
+                                        <div style="font-family:monospace; font-size:10px; color:rgba(194,193,255,0.4); letter-spacing:0.05em; margin-bottom:2px;">[OS_MAV-02]</div>
+                                        <div style="font-size:50px;line-height:1;font-family:'Geist',sans-serif;font-weight:800;color:rgba(194,193,255,0.04);letter-spacing:-0.04em;user-select:none;">02</div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                                    <span class="project-tag" style="border-color:rgba(194,193,255,0.3); background:rgba(194,193,255,0.08); color:#c2c1ff;">Desktop Assistant</span>
+                                    <span class="project-tag">Workspace</span>
+                                </div>
+                                <div style="flex:1;">
+                                    <h3 class="text-glow-purple"
+                                        style="font-family:'Geist',sans-serif;font-size:22px;font-weight:800;letter-spacing:-0.02em;color:#e5e2e1;margin-bottom:10px;">
+                                        Maverick</h3>
+                                    <p style="color:#859399;font-size:13px;line-height:1.8;margin-bottom:20px;">A futuristic
+                                        AI-powered desktop command center designed for productivity, automation, AI assistants,
+                                        and business workflows.</p>
+                                </div>
+                                <!-- Preview visual -->
+                                <div class="holo-card"
+                                    style="border-radius:12px;background:rgba(0,0,0,0.45);border:1px solid rgba(194,193,255,0.15);padding:16px;margin-bottom:16px;">
+                                    <div style="display:flex;gap:6px;margin-bottom:10px;">
+                                        <div style="width:8px;height:8px;border-radius:50%;background:#ff5f57;"></div>
+                                        <div style="width:8px;height:8px;border-radius:50%;background:#febc2e;"></div>
+                                        <div style="width:8px;height:8px;border-radius:50%;background:#28c840;"></div>
+                                    </div>
+                                    <div style="font-family:monospace;font-size:11px;color:#859399;line-height:1.8;">
+                                        <div><span style="color:var(--cyan);">▸</span> Maverick OS v1.0</div>
+                                        <div><span style="color:#28c840;">✓</span> AI Core loaded</div>
+                                        <div><span style="color:#febc2e;">⟳</span> Full release soon...</div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;flex-direction:column;gap:8px;">
+                                    <a href="http://localhost:8000" target="_blank" class="btn-sm primary" style="background:rgba(194,193,255,0.12); border-color:rgba(194,193,255,0.3); color:#c2c1ff; justify-content:center;"><span class="material-symbols-outlined"
+                                            style="font-size:14px">play_circle</span> Scroll Demo</a>
+                                    <span class="project-tag" style="text-align:center;padding:8px;opacity:0.6;font-family:monospace;font-size:10px;border-style:dashed;">[SYSTEM_RELEASE_PENDING]</span>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- INDRA -->
+                        <div class="project-card holo-card scanline carousel-item" data-index="2"
+                            style="--glow-color: rgba(255, 213, 156, 0.16); --theme-color: #ffd59c; border-radius:24px; padding:0; overflow:hidden; flex-direction:column;">
+                            <div style="height:5px; background:linear-gradient(to right, rgba(255,213,156,0.8), transparent);">
+                            </div>
+                            <div style="padding:28px; display:flex; flex-direction:column; gap:14px; height:100%; position:relative; z-index:2;">
+                                <div style="display:flex; justify-content:space-between; align-items:center;">
+                                    <div
+                                        style="width:48px;height:48px;border-radius:14px;background:rgba(255,213,156,0.08);border:1px solid rgba(255,213,156,0.2);display:flex;align-items:center;justify-content:center;box-shadow: 0 0 10px rgba(255, 213, 156, 0.15);">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffd59c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M3 3v18h18"></path>
+                                            <path d="m19 9-5 5-4-4-3 3"></path>
+                                        </svg>
+                                    </div>
+                                    <div style="display:flex; flex-direction:column; align-items:flex-end;">
+                                        <span style="font-family:monospace; font-size:10px; color:rgba(255, 213, 156, 0.4); letter-spacing:0.05em;">[DB_IND-03]</span>
+                                    </div>
+                                </div>
+                                <div style="flex:1;">
+                                    <h3 class="text-glow-orange"
+                                        style="font-family:'Geist',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.02em;color:#e5e2e1;margin-bottom:8px;">
+                                        INDRA</h3>
+                                    <p style="color:#859399;font-size:13px;line-height:1.7;margin-bottom:16px;">Intelligent
+                                        Network Data ROI Analysis — transforms business data into actionable insights through
+                                        dashboards and predictive reporting.</p>
+                                    <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+                                        <span class="project-tag" style="font-size:9px; padding:2px 8px;">Analytics</span>
+                                        <span class="project-tag" style="font-size:9px; padding:2px 8px;">BI Systems</span>
+                                    </div>
+                                </div>
+                                <div style="display:flex;gap:8px;">
+                                    <a href="https://indra-five.vercel.app/" target="_blank" class="btn-sm primary"
+                                        style="flex:1;justify-content:center;background:rgba(255,213,156,0.12); border-color:rgba(255,213,156,0.3); color:#ffd59c;"><span class="material-symbols-outlined"
+                                            style="font-size:13px">rocket_launch</span> Demo</a>
+                                    <a href="https://github.com/SK0705/INDRA" target="_blank" class="btn-sm ghost"
+                                        style="flex:1;justify-content:center;"><span class="material-symbols-outlined"
+                                            style="font-size:13px">code</span> Code</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SJ Creative Labs -->
+                        <div class="project-card holo-card scanline carousel-item" data-index="3"
+                            style="--glow-color: rgba(40, 200, 100, 0.16); --theme-color: #28c864; border-radius:24px; padding:0; overflow:hidden; flex-direction:column;">
+                            <div style="height:5px; background:linear-gradient(to right, rgba(40,200,100,0.8), transparent);">
+                            </div>
+                            <div style="padding:28px; display:flex; flex-direction:column; gap:14px; height:100%; position:relative; z-index:2;">
+                                <div style="display:flex; justify-content:space-between; align-items:center;">
+                                    <div
+                                        style="width:48px;height:48px;border-radius:14px;background:rgba(40,200,100,0.08);border:1px solid rgba(40,200,100,0.2);display:flex;align-items:center;justify-content:center;box-shadow: 0 0 10px rgba(40, 200, 100, 0.15);">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#28c864" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                        </svg>
+                                    </div>
+                                    <div style="display:flex; flex-direction:column; align-items:flex-end;">
+                                        <span style="font-family:monospace; font-size:10px; color:rgba(40, 200, 100, 0.4); letter-spacing:0.05em;">[WEB_SJC-04]</span>
+                                    </div>
+                                </div>
+                                <div style="flex:1;">
+                                    <h3 class="text-glow-green"
+                                        style="font-family:'Geist',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.02em;color:#e5e2e1;margin-bottom:8px;">
+                                        SJ Creative Labs</h3>
+                                    <p style="color:#859399;font-size:13px;line-height:1.7;margin-bottom:16px;">Premium startup
+                                        website showcasing software development, AI products, digital transformation and
+                                        business solutions.</p>
+                                    <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+                                        <span class="project-tag" style="font-size:9px; padding:2px 8px;">Portal</span>
+                                        <span class="project-tag" style="font-size:9px; padding:2px 8px;">Startup Hub</span>
+                                    </div>
+                                </div>
+                                <div style="display:flex;gap:8px;">
+                                    <a href="https://sjcreativelabs.vercel.app/" target="_blank" class="btn-sm primary"
+                                        style="flex:1;justify-content:center;background:rgba(40,200,100,0.12); border-color:rgba(40,200,100,0.3); color:#28c864;"><span class="material-symbols-outlined"
+                                            style="font-size:13px">rocket_launch</span> Demo</a>
+                                    <a href="https://github.com/SK0705/SJCREATIVELABS" target="_blank" class="btn-sm ghost"
+                                        style="flex:1;justify-content:center;"><span class="material-symbols-outlined"
+                                            style="font-size:13px">code</span> Code</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Murthy & Co. -->
+                        <div class="project-card holo-card scanline carousel-item" data-index="4"
+                            style="--glow-color: rgba(255, 85, 105, 0.16); --theme-color: #ff5569; border-radius:24px; padding:0; overflow:hidden; flex-direction:column;">
+                            <div style="height:5px; background:linear-gradient(to right, rgba(255,85,105,0.8), transparent);">
+                            </div>
+                            <div style="padding:28px; display:flex; flex-direction:column; gap:14px; height:100%; position:relative; z-index:2;">
+                                <div style="display:flex; justify-content:space-between; align-items:center;">
+                                    <div
+                                        style="width:48px;height:48px;border-radius:14px;background:rgba(255,85,105,0.08);border:1px solid rgba(255,85,105,0.2);display:flex;align-items:center;justify-content:center;box-shadow: 0 0 10px rgba(255, 85, 105, 0.15);">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff5569" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                        </svg>
+                                    </div>
+                                    <div style="display:flex; flex-direction:column; align-items:flex-end;">
+                                        <span style="font-family:monospace; font-size:10px; color:rgba(255, 85, 105, 0.4); letter-spacing:0.05em;">[SEC_MUR-05]</span>
+                                    </div>
+                                </div>
+                                <div style="flex:1;">
+                                    <h3 class="text-glow-red"
+                                        style="font-family:'Geist',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.02em;color:#e5e2e1;margin-bottom:8px;">
+                                        Murthy &amp; Co.</h3>
+                                    <p style="color:#859399;font-size:13px;line-height:1.7;margin-bottom:16px;">Professional
+                                        firm website for a legal and consulting practice — services, team profiles and
+                                        client-facing information.</p>
+                                    <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+                                        <span class="project-tag" style="font-size:9px; padding:2px 8px;">Firm Page</span>
+                                        <span class="project-tag" style="font-size:9px; padding:2px 8px;">Business UI</span>
+                                    </div>
+                                </div>
+                                <div style="display:flex;gap:8px;">
+                                    <a href="https://murthy-co.vercel.app/" target="_blank" class="btn-sm primary"
+                                        style="flex:1;justify-content:center;background:rgba(255,85,105,0.12); border-color:rgba(255,85,105,0.3); color:#ff5569;"><span class="material-symbols-outlined"
+                                            style="font-size:13px">rocket_launch</span> Demo</a>
+                                    <a href="https://github.com/SK0705/murthy-co" target="_blank" class="btn-sm ghost"
+                                        style="flex:1;justify-content:center;"><span class="material-symbols-outlined"
+                                            style="font-size:13px">code</span> Code</a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <!-- Maverick OS — Tall Side Card -->
-                <div class="project-card glass-strong bento-card-tall" style="border-radius:24px; padding:0; overflow:hidden; flex-direction:column;">
-                    <div style="height:5px; background:linear-gradient(to right, rgba(194,193,255,0.8), transparent);"></div>
-                    <div style="padding:28px; display:flex; flex-direction:column; gap:16px; height:100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-                            <div style="width:48px;height:48px;border-radius:14px;background:rgba(194,193,255,0.1);border:1px solid rgba(194,193,255,0.2);display:flex;align-items:center;justify-content:center;">
-                                <span class="material-symbols-outlined" style="color:var(--secondary,#c2c1ff);font-size:24px;">desktop_windows</span>
-                            </div>
-                            <div style="font-size:60px;line-height:1;font-family:'Geist',sans-serif;font-weight:800;color:rgba(194,193,255,0.06);letter-spacing:-0.04em;user-select:none;">02</div>
-                        </div>
-                        <div style="display:flex;gap:6px;flex-wrap:wrap;">
-                            <span class="project-tag">Desktop</span>
-                            <span class="project-tag">Assistant</span>
-                        </div>
-                        <div style="flex:1;">
-                            <h3 style="font-family:'Geist',sans-serif;font-size:22px;font-weight:800;letter-spacing:-0.02em;color:#e5e2e1;margin-bottom:10px;">Maverick</h3>
-                            <p style="color:#859399;font-size:13px;line-height:1.8;margin-bottom:20px;">A futuristic AI-powered desktop command center designed for productivity, automation, AI assistants, and business workflows.</p>
-                        </div>
-                        <!-- Preview visual -->
-                        <div style="border-radius:12px;background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.06);padding:16px;margin-bottom:16px;">
-                            <div style="display:flex;gap:6px;margin-bottom:10px;">
-                                <div style="width:8px;height:8px;border-radius:50%;background:#ff5f57;"></div>
-                                <div style="width:8px;height:8px;border-radius:50%;background:#febc2e;"></div>
-                                <div style="width:8px;height:8px;border-radius:50%;background:#28c840;"></div>
-                            </div>
-                            <div style="font-family:monospace;font-size:11px;color:#859399;line-height:1.8;">
-                                <div><span style="color:var(--cyan);">▸</span> Maverick OS v1.0</div>
-                                <div><span style="color:#28c840;">✓</span> AI Core loaded</div>
-                                <div><span style="color:#febc2e;">⟳</span> Full release soon...</div>
-                            </div>
-                        </div>
-                        <div style="display:flex;flex-direction:column;gap:8px;">
-                            <a href="http://localhost:8000" target="_blank" class="btn-sm primary" style="justify-content:center;"><span class="material-symbols-outlined" style="font-size:14px">play_circle</span> Scroll Demo</a>
-                            <span class="project-tag" style="text-align:center;padding:8px;opacity:0.5;">Full Release Soon</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- INDRA -->
-                <div class="project-card glass-strong" style="border-radius:24px; padding:0; overflow:hidden; flex-direction:column;">
-                    <div style="height:5px; background:linear-gradient(to right, rgba(255,213,156,0.8), transparent);"></div>
-                    <div style="padding:28px; display:flex; flex-direction:column; gap:14px; height:100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <div style="width:48px;height:48px;border-radius:14px;background:rgba(255,213,156,0.1);border:1px solid rgba(255,213,156,0.2);display:flex;align-items:center;justify-content:center;">
-                                <span class="material-symbols-outlined" style="color:#ffd59c;font-size:24px;">query_stats</span>
-                            </div>
-                            <div style="display:flex;gap:6px;">
-                                <span class="project-tag">Analytics</span>
-                                <span class="project-tag">BI</span>
-                            </div>
-                        </div>
-                        <div style="flex:1;">
-                            <h3 style="font-family:'Geist',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.02em;color:#e5e2e1;margin-bottom:8px;">INDRA</h3>
-                            <p style="color:#859399;font-size:13px;line-height:1.7;margin-bottom:16px;">Intelligent Network Data ROI Analysis — transforms business data into actionable insights through dashboards and predictive reporting.</p>
-                        </div>
-                        <div style="display:flex;gap:8px;">
-                            <a href="https://indra-five.vercel.app/" target="_blank" class="btn-sm primary" style="flex:1;justify-content:center;"><span class="material-symbols-outlined" style="font-size:13px">rocket_launch</span> Demo</a>
-                            <a href="https://github.com/SK0705/INDRA" target="_blank" class="btn-sm ghost" style="flex:1;justify-content:center;"><span class="material-symbols-outlined" style="font-size:13px">code</span> Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SJ Creative Labs -->
-                <div class="project-card glass-strong" style="border-radius:24px; padding:0; overflow:hidden; flex-direction:column;">
-                    <div style="height:5px; background:linear-gradient(to right, rgba(40,200,100,0.8), transparent);"></div>
-                    <div style="padding:28px; display:flex; flex-direction:column; gap:14px; height:100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <div style="width:48px;height:48px;border-radius:14px;background:rgba(40,200,100,0.1);border:1px solid rgba(40,200,100,0.2);display:flex;align-items:center;justify-content:center;">
-                                <span class="material-symbols-outlined" style="color:#28c864;font-size:24px;">language</span>
-                            </div>
-                            <div style="display:flex;gap:6px;">
-                                <span class="project-tag">Web</span>
-                                <span class="project-tag">Startup</span>
-                            </div>
-                        </div>
-                        <div style="flex:1;">
-                            <h3 style="font-family:'Geist',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.02em;color:#e5e2e1;margin-bottom:8px;">SJ Creative Labs</h3>
-                            <p style="color:#859399;font-size:13px;line-height:1.7;margin-bottom:16px;">Premium startup website showcasing software development, AI products, digital transformation and business solutions.</p>
-                        </div>
-                        <div style="display:flex;gap:8px;">
-                            <a href="https://sjcreativelabs.vercel.app/" target="_blank" class="btn-sm primary" style="flex:1;justify-content:center;"><span class="material-symbols-outlined" style="font-size:13px">rocket_launch</span> Demo</a>
-                            <a href="https://github.com/SK0705/SJCREATIVELABS" target="_blank" class="btn-sm ghost" style="flex:1;justify-content:center;"><span class="material-symbols-outlined" style="font-size:13px">code</span> Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Murthy & Co. -->
-                <div class="project-card glass-strong" style="border-radius:24px; padding:0; overflow:hidden; flex-direction:column;">
-                    <div style="height:5px; background:linear-gradient(to right, rgba(255,85,105,0.8), transparent);"></div>
-                    <div style="padding:28px; display:flex; flex-direction:column; gap:14px; height:100%;">
-                        <div style="display:flex; justify-content:space-between; align-items:center;">
-                            <div style="width:48px;height:48px;border-radius:14px;background:rgba(255,85,105,0.1);border:1px solid rgba(255,85,105,0.2);display:flex;align-items:center;justify-content:center;">
-                                <span class="material-symbols-outlined" style="color:#ff5569;font-size:24px;">gavel</span>
-                            </div>
-                            <div style="display:flex;gap:6px;">
-                                <span class="project-tag">Legal</span>
-                                <span class="project-tag">Business</span>
-                            </div>
-                        </div>
-                        <div style="flex:1;">
-                            <h3 style="font-family:'Geist',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.02em;color:#e5e2e1;margin-bottom:8px;">Murthy &amp; Co.</h3>
-                            <p style="color:#859399;font-size:13px;line-height:1.7;margin-bottom:16px;">Professional firm website for a legal and consulting practice — services, team profiles and client-facing information.</p>
-                        </div>
-                        <div style="display:flex;gap:8px;">
-                            <a href="https://murthy-co.vercel.app/" target="_blank" class="btn-sm primary" style="flex:1;justify-content:center;"><span class="material-symbols-outlined" style="font-size:13px">rocket_launch</span> Demo</a>
-                            <a href="https://github.com/SK0705/murthy-co" target="_blank" class="btn-sm ghost" style="flex:1;justify-content:center;"><span class="material-symbols-outlined" style="font-size:13px">code</span> Code</a>
-                        </div>
-                    </div>
-                </div>
-
+                <button class="carousel-btn next" id="carousel-next" aria-label="Next Project">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
             </div>
-        </section>
+
+            <!-- Indicator Dots -->
+            <div class="carousel-controls">
+                <span class="carousel-dot active" data-index="0"></span>
+                <span class="carousel-dot" data-index="1"></span>
+                <span class="carousel-dot" data-index="2"></span>
+                <span class="carousel-dot" data-index="3"></span>
+                <span class="carousel-dot" data-index="4"></span>
+            </div>
+            </section>
+        </div>
 
 
         <!-- ─── EXPERIENCE ─── -->
         <div class="divider"></div>
         <section id="experience" class="section" style="padding-bottom:100px;">
             <span class="section-label">Timeline</span>
-            <h2 class="section-title" style="margin-bottom:56px;">My <span style="color:var(--cyan);">Journey</span></h2>
+            <h2 class="section-title" style="margin-bottom:56px;">My <span style="color:var(--cyan);">Journey</span>
+            </h2>
             <div style="max-width:700px; position:relative; padding-left:50px;">
                 <div class="timeline-line"></div>
                 <!-- Item -->
                 <div style="display:flex; gap:20px; position:relative; margin-bottom:48px;">
-                    <div class="timeline-dot" style="position:absolute; left:-35px; margin-top:5px;"></div>
-                    <div class="glass-strong" style="border-radius:20px; padding:28px; flex:1; transition: all 0.3s ease;">
-                        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px; flex-wrap:wrap; gap:10px;">
+                    <div class="timeline-dot glow-dot" style="position:absolute; left:-37px; margin-top:8px; width:14px; height:14px; border-radius:50%; background:var(--cyan); box-shadow: 0 0 15px var(--cyan); border: 2px solid #090909;"></div>
+                    <div class="holo-card scanline"
+                        style="border-radius:24px; padding:32px; flex:1; border: 1px solid rgba(0, 209, 255, 0.15);">
+                        <div
+                            style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:18px; flex-wrap:wrap; gap:10px;">
                             <div>
-                                <h3 style="font-family:'Geist',sans-serif;font-size:20px;font-weight:700;color:#e5e2e1;">Web Development Intern</h3>
-                                <span style="font-size:13px; color:var(--cyan-dim); font-weight:600;">Adhoc Network Tech</span>
+                                <h3 class="text-glow-cyan"
+                                    style="font-family:'Geist',sans-serif;font-size:20px;font-weight:800;color:#e5e2e1;margin-bottom:2px;">
+                                    Web Development Intern</h3>
+                                <span style="font-size:13px; color:var(--cyan-dim); font-weight:700;">Adhoc Network Tech</span>
                             </div>
-                            <span class="project-tag featured" style="padding:5px 14px; white-space:nowrap;">Apr 2025 – Jun 2025</span>
+                            <span class="project-tag featured" style="padding:6px 14px; white-space:nowrap; border-color:rgba(0,209,255,0.3); background:rgba(0,209,255,0.08); font-family:monospace; font-size:10px;">[04.2025 - 06.2025]</span>
                         </div>
-                        <ul style="display:flex; flex-direction:column; gap:10px;">
-                            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; color:#bbc9cf;">
-                                <span class="material-symbols-outlined" style="color:var(--cyan);font-size:16px;margin-top:2px;flex-shrink:0;">check_circle</span>
+                        <ul style="display:flex; flex-direction:column; gap:12px;">
+                            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; color:#bbc9cf; line-height:1.6;">
+                                <span class="material-symbols-outlined"
+                                    style="color:var(--cyan);font-size:18px;margin-top:2px;flex-shrink:0;filter:drop-shadow(0 0 3px var(--cyan));">check_circle</span>
                                 Assisted in developing responsive web applications for business clients.
                             </li>
-                            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; color:#bbc9cf;">
-                                <span class="material-symbols-outlined" style="color:var(--cyan);font-size:16px;margin-top:2px;flex-shrink:0;">check_circle</span>
+                            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; color:#bbc9cf; line-height:1.6;">
+                                <span class="material-symbols-outlined"
+                                    style="color:var(--cyan);font-size:18px;margin-top:2px;flex-shrink:0;filter:drop-shadow(0 0 3px var(--cyan));">check_circle</span>
                                 Worked on financial automation solutions using AI-assisted development tools.
                             </li>
-                            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; color:#bbc9cf;">
-                                <span class="material-symbols-outlined" style="color:var(--cyan);font-size:16px;margin-top:2px;flex-shrink:0;">check_circle</span>
+                            <li style="display:flex; gap:10px; align-items:flex-start; font-size:14px; color:#bbc9cf; line-height:1.6;">
+                                <span class="material-symbols-outlined"
+                                    style="color:var(--cyan);font-size:18px;margin-top:2px;flex-shrink:0;filter:drop-shadow(0 0 3px var(--cyan));">check_circle</span>
                                 Built business-oriented interfaces improving operational data accuracy.
                             </li>
                         </ul>
@@ -963,99 +1824,176 @@
                 <!-- Left -->
                 <div>
                     <span class="section-label">Let's Connect</span>
-                    <h2 class="section-title" style="margin-bottom:20px;">Initiate <br/><span style="color:var(--cyan);">Contact</span></h2>
-                    <p style="font-size:16px; color:#859399; max-width:400px; line-height:1.7; margin-bottom:40px;">Currently open for selective collaborations and opportunities. Let's build intelligent products together.</p>
-                    <div style="display:flex; flex-direction:column; gap:20px;">
+                    <h2 class="section-title" style="margin-bottom:20px;">Initiate <br /><span
+                            style="color:var(--cyan);">Contact</span></h2>
+                    <p style="font-size:16px; color:#859399; max-width:400px; line-height:1.7; margin-bottom:40px;">
+                        Currently open for selective collaborations and opportunities. Let's build intelligent products
+                        together.</p>
+                    <div style="display:flex; flex-direction:column; gap:24px;">
                         <div style="display:flex; align-items:center; gap:16px;">
-                            <div class="glass" style="width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;">
-                                <span class="material-symbols-outlined" style="color:var(--cyan);">alternate_email</span>
+                            <div class="glass"
+                                style="width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow: 0 0 10px rgba(0, 209, 255, 0.15); border:1px solid rgba(0, 209, 255, 0.2);">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                </svg>
                             </div>
                             <div>
-                                <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#859399;margin-bottom:3px;">Email</div>
-                                <a href="mailto:kuchisrikar05@gmail.com" style="font-size:16px;font-weight:600;color:#e5e2e1;text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='#a4e6ff'" onmouseout="this.style.color='#e5e2e1'">kuchisrikar05@gmail.com</a>
+                                <div
+                                    style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#859399;margin-bottom:3px;">
+                                    Email</div>
+                                <a href="mailto:kuchisrikar05@gmail.com"
+                                    style="font-size:16px;font-weight:600;color:#e5e2e1;text-decoration:none;transition:color 0.2s ease;"
+                                    onmouseover="this.style.color='#a4e6ff'"
+                                    onmouseout="this.style.color='#e5e2e1'">kuchisrikar05@gmail.com</a>
+                            </div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:16px;">
+                            <div class="glass"
+                                style="width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow: 0 0 10px rgba(0, 209, 255, 0.15); border:1px solid rgba(0, 209, 255, 0.2);">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <div
+                                    style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#859399;margin-bottom:3px;">
+                                    Phone</div>
+                                <a href="tel:+919346124421"
+                                    style="font-size:16px;font-weight:600;color:#e5e2e1;text-decoration:none;transition:color 0.2s ease;"
+                                    onmouseover="this.style.color='#a4e6ff'"
+                                    onmouseout="this.style.color='#e5e2e1'">+91 9346124421</a>
                             </div>
                         </div>
                         <div style="display:flex; gap:12px; margin-top:8px;">
-                            <a href="https://github.com/SK0705" target="_blank" class="btn-sm ghost">
-                                <span class="material-symbols-outlined" style="font-size:16px">code</span> GitHub
+                            <a href="https://github.com/SK0705" target="_blank" class="btn-sm ghost" style="display:inline-flex; align-items:center; gap:8px;">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                                    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                                </svg> GitHub
                             </a>
-                            <a href="https://linkedin.com/in/sk1377" target="_blank" class="btn-sm ghost">
-                                <span class="material-symbols-outlined" style="font-size:16px">link</span> LinkedIn
+                            <a href="https://linkedin.com/in/sk1377" target="_blank" class="btn-sm ghost" style="display:inline-flex; align-items:center; gap:8px;">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg> LinkedIn
                             </a>
                         </div>
                     </div>
                 </div>
                 <!-- Form -->
-                <div class="glass-strong" style="border-radius:32px; padding:40px; position:relative; overflow:hidden; min-height:480px; display:flex; flex-direction:column; justify-content:center;">
-                    <div style="position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:rgba(0,209,255,0.06);filter:blur(60px);pointer-events:none;"></div>
-                    
+                <div class="glass-strong holo-card scanline"
+                    style="border-radius:32px; padding:40px; position:relative; overflow:hidden; min-height:480px; display:flex; flex-direction:column; justify-content:center; border: 1px solid rgba(0, 209, 255, 0.18); box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 40px rgba(0,209,255,0.05);">
+                    <div
+                        style="position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:rgba(0,209,255,0.06);filter:blur(60px);pointer-events:none;">
+                    </div>
+
                     <script>
                         document.addEventListener('DOMContentLoaded', () => {
                             const form = document.getElementById('contact-form');
                             const fieldsWrapper = document.getElementById('contact-fields-wrapper');
                             const successMsg = document.getElementById('success-message');
-                            
+
                             if (form && fieldsWrapper && successMsg) {
-                                form.addEventListener('submit', () => {
-                                    // Submit opens in a new tab, and current tab changes UI state to success message overlay
-                                    setTimeout(() => {
-                                        fieldsWrapper.style.display = 'none';
-                                        successMsg.style.display = 'flex';
-                                    }, 150);
+                                form.addEventListener('submit', (e) => {
+                                    e.preventDefault(); // Prevent redirect
+
+                                    // Display success screen instantly for seamless transition
+                                    fieldsWrapper.style.display = 'none';
+                                    successMsg.style.display = 'flex';
+
+                                    const data = new URLSearchParams();
+                                    for (const pair of new FormData(form)) {
+                                        data.append(pair[0], pair[1]);
+                                    }
+
+                                    // Post silently in background
+                                    fetch(form.action, {
+                                        method: 'POST',
+                                        body: data,
+                                        mode: 'no-cors',
+                                        headers: {
+                                            'Content-Type': 'application/x-www-form-urlencoded'
+                                        }
+                                    }).catch((err) => {
+                                        console.warn('Silent transmission logging:', err);
+                                    });
                                 });
                             }
                         });
                     </script>
-                    
+
                     <!-- Success Message Overlay -->
-                    <div id="success-message" style="display:none; flex-direction:column; align-items:center; justify-content:center; gap:20px; text-align:center; position:relative; z-index:1;">
-                        <span class="material-symbols-outlined" style="font-size:72px; color:var(--cyan); filter:drop-shadow(0 0 15px rgba(0,209,255,0.5));">check_circle</span>
-                        <h3 style="font-family:'Geist',sans-serif; font-size:24px; font-weight:800; color:#e5e2e1;">Signal Transmitted</h3>
-                        <p style="color:#859399; font-size:15px; max-width:320px; line-height:1.7; margin:0 auto;">Your transmission has been logged in the system database. I will respond to your query shortly.</p>
-                        <button onclick="document.getElementById('success-message').style.display='none'; document.getElementById('contact-fields-wrapper').style.display='flex'; document.getElementById('contact-form').reset();" class="btn-sm primary" style="margin-top:10px; cursor:pointer;">Send Another Message</button>
+                    <div id="success-message"
+                        style="display:none; flex-direction:column; align-items:center; justify-content:center; gap:20px; text-align:center; position:relative; z-index:1;">
+                        <span class="material-symbols-outlined"
+                            style="font-size:72px; color:var(--cyan); filter:drop-shadow(0 0 15px rgba(0,209,255,0.5));">check_circle</span>
+                        <h3 style="font-family:'Geist',sans-serif; font-size:24px; font-weight:800; color:#e5e2e1;">
+                            Signal Transmitted</h3>
+                        <p style="color:#859399; font-size:15px; max-width:320px; line-height:1.7; margin:0 auto;">Your
+                            transmission has been logged in the system database. I will respond to your query shortly.
+                        </p>
+                        <button
+                            onclick="document.getElementById('success-message').style.display='none'; document.getElementById('contact-fields-wrapper').style.display='flex'; document.getElementById('contact-form').reset();"
+                            class="btn-sm primary" style="margin-top:10px; cursor:pointer;">Send Another
+                            Message</button>
                     </div>
 
-                    <form id="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSedkpBPtxxCBPC-LjyDpUdyKQWDC9sC8klFy1i6ehDoP62vAw/formResponse" method="POST" target="_blank" style="position:relative;z-index:1;">
+                    <form id="contact-form"
+                        action="https://docs.google.com/forms/d/e/1FAIpQLSedkpBPtxxCBPC-LjyDpUdyKQWDC9sC8klFy1i6ehDoP62vAw/formResponse"
+                        method="POST" style="position:relative;z-index:1;">
                         <div id="contact-fields-wrapper" style="display:flex; flex-direction:column; gap:28px;">
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div class="form-field">
-                                <label>Name</label>
-                                <input type="text" name="entry.2005620554" placeholder="Your full name" required />
+                                <div class="form-field">
+                                    <label>Name</label>
+                                    <input type="text" name="entry.2005620554" placeholder="Your full name" required />
+                                </div>
+                                <div class="form-field">
+                                    <label>Email</label>
+                                    <input type="email" name="entry.1302366386" placeholder="your@email.com" required />
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="form-field">
+                                    <label>Phone number</label>
+                                    <input type="tel" name="entry.1166974658" placeholder="Your phone number" />
+                                </div>
+                                <div class="form-field">
+                                    <label>Project / Collaboration</label>
+                                    <input type="text" name="entry.1045781291" placeholder="Project / Collaboration" />
+                                </div>
                             </div>
                             <div class="form-field">
-                                <label>Email</label>
-                                <input type="email" name="entry.1302366386" placeholder="your@email.com" required />
+                                <label>Message</label>
+                                <textarea name="entry.1065046570" rows="4"
+                                    placeholder="Tell me about your project or opportunity…" required></textarea>
                             </div>
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div class="form-field">
-                                <label>Phone number</label>
-                                <input type="tel" name="entry.1166974658" placeholder="Your phone number" />
-                            </div>
-                            <div class="form-field">
-                                <label>Project / Collaboration</label>
-                                <input type="text" name="entry.1045781291" placeholder="Project / Collaboration" />
-                            </div>
-                        </div>
-                        <div class="form-field">
-                            <label>Message</label>
-                            <textarea name="entry.1065046570" rows="4" placeholder="Tell me about your project or opportunity…" required></textarea>
-                        </div>
-                        <!-- Uiverse Button -->
-                        <button type="submit" class="uiverse-btn">
-                            <div class="btn-outline"></div>
-                            <div class="btn-content">
-                                <span class="icon">
-                                    <svg width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M14.2199 21.63C13.0399 21.63 11.3699 20.8 10.0499 16.83L9.32988 14.67L7.16988 13.95C3.20988 12.63 2.37988 10.96 2.37988 9.78001C2.37988 8.61001 3.20988 6.93001 7.16988 5.60001L15.6599 2.77001C17.7799 2.06001 19.5499 2.27001 20.6399 3.35001C21.7299 4.43001 21.9399 6.21001 21.2299 8.33001L18.3999 16.82C17.0699 20.8 15.3999 21.63 14.2199 21.63Z" fill="currentColor"/>
-                                        <path d="M10.11 14.4C9.92 14.4 9.73 14.33 9.58 14.18C9.29 13.89 9.29 13.41 9.58 13.12L13.16 9.53C13.45 9.24 13.93 9.24 14.22 9.53C14.51 9.82 14.51 10.3 14.22 10.59L10.64 14.18C10.5 14.33 10.3 14.4 10.11 14.4Z" fill="currentColor"/>
-                                    </svg>
-                                </span>
-                                <p>
-                                    <span style="--i:0">S</span><span style="--i:1">e</span><span style="--i:2">n</span><span style="--i:3">d</span><span style="--i:4">&nbsp;</span><span style="--i:5">S</span><span style="--i:6">i</span><span style="--i:7">g</span><span style="--i:8">n</span><span style="--i:9">a</span><span style="--i:10">l</span>
-                                </p>
-                            </div>
-                        </button>
+                            <!-- Uiverse Button -->
+                            <button type="submit" class="uiverse-btn">
+                                <div class="btn-outline"></div>
+                                <div class="btn-content">
+                                    <span class="icon">
+                                        <svg width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M14.2199 21.63C13.0399 21.63 11.3699 20.8 10.0499 16.83L9.32988 14.67L7.16988 13.95C3.20988 12.63 2.37988 10.96 2.37988 9.78001C2.37988 8.61001 3.20988 6.93001 7.16988 5.60001L15.6599 2.77001C17.7799 2.06001 19.5499 2.27001 20.6399 3.35001C21.7299 4.43001 21.9399 6.21001 21.2299 8.33001L18.3999 16.82C17.0699 20.8 15.3999 21.63 14.2199 21.63Z"
+                                                fill="currentColor" />
+                                            <path
+                                                d="M10.11 14.4C9.92 14.4 9.73 14.33 9.58 14.18C9.29 13.89 9.29 13.41 9.58 13.12L13.16 9.53C13.45 9.24 13.93 9.24 14.22 9.53C14.51 9.82 14.51 10.3 14.22 10.59L10.64 14.18C10.5 14.33 10.3 14.4 10.11 14.4Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                    <p>
+                                        <span style="--i:0">S</span><span style="--i:1">e</span><span
+                                            style="--i:2">n</span><span style="--i:3">d</span><span
+                                            style="--i:4">&nbsp;</span><span style="--i:5">S</span><span
+                                            style="--i:6">i</span><span style="--i:7">g</span><span
+                                            style="--i:8">n</span><span style="--i:9">a</span><span
+                                            style="--i:10">l</span>
+                                    </p>
+                                </div>
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -1065,170 +2003,481 @@
 
     <!-- ═══ FOOTER ═══ -->
     <footer>
-        <div style="font-family:'Geist',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.04em;color:var(--cyan-dim);">&lt;SK/&gt;</div>
+        <div
+            style="font-family:'Geist',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.04em;color:var(--cyan-dim);">
+            &lt;SK/&gt;</div>
         <div style="font-size:13px;color:#859399;">© 2026 Srikar Kuchi &nbsp;·&nbsp; AI Product Builder</div>
         <div style="display:flex;gap:20px;">
-            <a href="https://github.com/SK0705" target="_blank" style="font-size:13px;color:#859399;text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='#a4e6ff'" onmouseout="this.style.color='#859399'">GitHub</a>
-            <a href="https://linkedin.com/in/sk1377" target="_blank" style="font-size:13px;color:#859399;text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='#a4e6ff'" onmouseout="this.style.color='#859399'">LinkedIn</a>
+            <a href="https://github.com/SK0705" target="_blank"
+                style="font-size:13px;color:#859399;text-decoration:none;transition:color 0.2s ease;"
+                onmouseover="this.style.color='#a4e6ff'" onmouseout="this.style.color='#859399'">GitHub</a>
+            <a href="https://linkedin.com/in/sk1377" target="_blank"
+                style="font-size:13px;color:#859399;text-decoration:none;transition:color 0.2s ease;"
+                onmouseover="this.style.color='#a4e6ff'" onmouseout="this.style.color='#859399'">LinkedIn</a>
         </div>
     </footer>
 
     <script>
-    // ─── GLOBAL CANVAS — COVER-FILL ───────────────────────────────────────────
-    (function() {
-        const canvas = document.getElementById('scroll-canvas');
-        const ctx = canvas.getContext('2d');
-        const FRAME_COUNT = 300;
-        const images = new Array(FRAME_COUNT);
-        let loadedCount = 0;
-        let currentFrameIndex = 0;
-        let raf = null;
+        // ─── GLOBAL CANVAS — COVER-FILL ───────────────────────────────────────────
+        (function () {
+            const canvas = document.getElementById('scroll-canvas');
+            const ctx = canvas.getContext('2d');
+            const FRAME_COUNT = 300;
+            const images = new Array(FRAME_COUNT);
+            let loadedCount = 0;
+            let currentFrameIndex = 0;
+            let raf = null;
 
-        const frameSrc = i =>
-            `frames/maverick_ os full_processed_${String(i).padStart(3,'0')}.jpg`;
+            const frameSrc = i =>
+                `frames/maverick_ os full_processed_${String(i).padStart(3, '0')}.jpg`;
 
-        // Compute natural image aspect ratio from first loaded image
-        let imgW = 1920, imgH = 1080;
+            // Compute natural image aspect ratio from first loaded image
+            let imgW = 1920, imgH = 1080;
 
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            drawFrame(currentFrameIndex);
-        }
-
-        function drawFrame(index) {
-            const img = images[index];
-            if (!img || !img.complete || img.naturalWidth === 0) return;
-
-            const cw = canvas.width, ch = canvas.height;
-            const iw = img.naturalWidth, ih = img.naturalHeight;
-
-            // Cover: scale so the image fills the canvas, centered
-            const scale = Math.max(cw / iw, ch / ih);
-            const dw = iw * scale, dh = ih * scale;
-            const dx = (cw - dw) / 2, dy = (ch - dh) / 2;
-
-            ctx.clearRect(0, 0, cw, ch);
-            ctx.drawImage(img, dx, dy, dw, dh);
-        }
-
-        // Load all frames
-        for (let i = 0; i < FRAME_COUNT; i++) {
-            const img = new Image();
-            img.src = frameSrc(i);
-            images[i] = img;
-            img.onload = () => {
-                loadedCount++;
-                if (i === 0) {
-                    resizeCanvas();
-                    drawFrame(0);
-                }
-            };
-        }
-
-        // Scroll → frame index
-        let ticking = false;
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-                    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-                    const frac = maxScroll > 0 ? Math.max(0, Math.min(1, scrollTop / maxScroll)) : 0;
-                    const idx = Math.min(FRAME_COUNT - 1, Math.floor(frac * FRAME_COUNT));
-                    currentFrameIndex = idx;
-                    drawFrame(idx);
-                    ticking = false;
-                });
-                ticking = true;
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                drawFrame(currentFrameIndex);
             }
-        }, { passive: true });
 
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-    })();
+            function drawFrame(index) {
+                const img = images[index];
+                if (!img || !img.complete || img.naturalWidth === 0) return;
 
-    // ─── ACTIVE NAV HIGHLIGHT ─────────────────────────────────────────────────
-    (function() {
-        const sections = ['home','about','skills','projects','experience','contact'];
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    sections.forEach(id => {
-                        const el = document.getElementById('nav-' + id);
-                        if (el) el.classList.remove('active');
+                const cw = canvas.width, ch = canvas.height;
+                const iw = img.naturalWidth, ih = img.naturalHeight;
+
+                // Cover: scale so the image fills the canvas, centered
+                const scale = Math.max(cw / iw, ch / ih);
+                const dw = iw * scale, dh = ih * scale;
+                const dx = (cw - dw) / 2, dy = (ch - dh) / 2;
+
+                ctx.clearRect(0, 0, cw, ch);
+                ctx.drawImage(img, dx, dy, dw, dh);
+            }
+
+            // Load all frames
+            for (let i = 0; i < FRAME_COUNT; i++) {
+                const img = new Image();
+                img.src = frameSrc(i);
+                images[i] = img;
+                img.onload = () => {
+                    loadedCount++;
+                    if (i === 0) {
+                        resizeCanvas();
+                        drawFrame(0);
+                    }
+                };
+            }
+
+            // Scroll → frame index
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+                        const frac = maxScroll > 0 ? Math.max(0, Math.min(1, scrollTop / maxScroll)) : 0;
+                        const idx = Math.min(FRAME_COUNT - 1, Math.floor(frac * FRAME_COUNT));
+                        currentFrameIndex = idx;
+                        drawFrame(idx);
+                        ticking = false;
                     });
-                    const nav = document.getElementById('nav-' + entry.target.id);
-                    if (nav) nav.classList.add('active');
+                    ticking = true;
                 }
+            }, { passive: true });
+
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+        })();
+
+        // ─── SCI-FI HOLOGRAPHIC PARTICLE SYSTEM ────────────────────────────────────
+        (function () {
+            const canvas = document.getElementById('particle-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+            let mouse = { x: null, y: null, radius: 130 };
+
+            const isMobile = window.innerWidth < 768;
+            const particleCount = isMobile ? 35 : 90;
+            const connectionDistance = 90;
+
+            class Particle {
+                constructor() {
+                    this.reset();
+                    this.y = Math.random() * height;
+                }
+
+                reset() {
+                    this.x = Math.random() * width;
+                    this.y = height + 10;
+                    this.vx = (Math.random() - 0.5) * 0.4;
+                    this.vy = -(Math.random() * 0.4 + 0.25);
+                    this.r = Math.random() * 2 + 0.6;
+                    this.alpha = Math.random() * 0.45 + 0.15;
+                    this.color = Math.random() > 0.35 ? '0, 209, 255' : '194, 193, 255';
+                }
+
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    // Mouse interaction
+                    if (mouse.x !== null && mouse.y !== null) {
+                        const dx = this.x - mouse.x;
+                        const dy = this.y - mouse.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < mouse.radius) {
+                            const force = (mouse.radius - dist) / mouse.radius;
+                            this.x += (dx / dist) * force * 1.5;
+                            this.y += (dy / dist) * force * 1.5;
+                        }
+                    }
+
+                    // Reset when floating off-screen
+                    if (this.y < -10 || this.x < -10 || this.x > width + 10) {
+                        this.reset();
+                    }
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(${this.color}, ${this.alpha})`;
+                    ctx.shadowBlur = this.r * 2;
+                    ctx.shadowColor = `rgba(${this.color}, 0.5)`;
+                    ctx.fill();
+                    ctx.shadowBlur = 0;
+                }
+            }
+
+            function init() {
+                particles = [];
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Particle());
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+
+                // Grid scanner sweep
+                const scanTime = Date.now() * 0.0006;
+                const scanY = (Math.sin(scanTime) * 0.5 + 0.5) * height;
+                ctx.beginPath();
+                ctx.moveTo(0, scanY);
+                ctx.lineTo(width, scanY);
+                ctx.strokeStyle = 'rgba(0, 209, 255, 0.025)';
+                ctx.lineWidth = 3;
+                ctx.stroke();
+
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+
+                    // Connect adjacent points
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < connectionDistance) {
+                            const alpha = (1 - (dist / connectionDistance)) * 0.12;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(0, 209, 255, ${alpha})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animate);
+            }
+
+            window.addEventListener('resize', () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+                init();
             });
-        }, { threshold: 0.4 });
-        sections.forEach(id => {
-            const el = document.getElementById(id);
-            if (el) observer.observe(el);
-        });
-    })();
 
-    // ─── GLASS CARD 3D TILT ───────────────────────────────────────────────────
-    document.querySelectorAll('.glass-strong').forEach(card => {
-        card.addEventListener('mousemove', e => {
-            const r = card.getBoundingClientRect();
-            const x = e.clientX - r.left, y = e.clientY - r.top;
-            const cx = r.width / 2, cy = r.height / 2;
-            const rx = (y - cy) / 30, ry = (cx - x) / 30;
-            card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
-        });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(900px) rotateX(0) rotateY(0)';
-        });
-    });
-
-    // ─── PROJECT CARD MOUSE GLOW ─────────────────────────────────────────────
-    document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('mousemove', e => {
-            const r = card.getBoundingClientRect();
-            const x = e.clientX - r.left, y = e.clientY - r.top;
-            card.style.setProperty('--mx', x + 'px');
-            card.style.setProperty('--my', y + 'px');
-        });
-    });
-
-    // ─── FORM LABEL FOCUS ────────────────────────────────────────────────────
-    document.querySelectorAll('.form-field input, .form-field textarea, .form-field select').forEach(inp => {
-        inp.addEventListener('focus', () => { inp.previousElementSibling && (inp.previousElementSibling.style.color = '#a4e6ff'); });
-        inp.addEventListener('blur',  () => { inp.previousElementSibling && (inp.previousElementSibling.style.color = '#859399'); });
-    });
-
-    // ─── SMOOTH ANCHOR SCROLL ────────────────────────────────────────────────
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', e => {
-            const target = document.querySelector(a.getAttribute('href'));
-            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-        });
-    });
-
-    // ─── MOBILE MENU TOGGLE ─────────────────────────────────────────────────
-    (function() {
-        const menuBtn = document.getElementById('menu-btn');
-        const closeMenuBtn = document.getElementById('close-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-        if (menuBtn && closeMenuBtn && mobileMenu) {
-            menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.remove('translate-x-full');
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
             });
 
-            closeMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.add('translate-x-full');
+            window.addEventListener('mouseleave', () => {
+                mouse.x = null;
+                mouse.y = null;
             });
 
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', () => {
+            init();
+            animate();
+        })();
+
+        // ─── 3D CIRCULAR CAROUSEL MODULE ──────────────────────────────────────────
+        (function () {
+            const track = document.getElementById('carousel-track');
+            const items = document.querySelectorAll('.carousel-item');
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+            const dots = document.querySelectorAll('.carousel-dot');
+            if (!track || items.length === 0) return;
+
+            let currentIndex = 0;
+            const totalItems = items.length;
+            const scrollContainer = document.getElementById('projects-scroll-container');
+            
+            function getOrbitParams() {
+                const w = window.innerWidth;
+                const isMobile = w < 768;
+                const isTablet = w >= 768 && w < 1024;
+                
+                let rx, rz, ry;
+                if (isMobile) {
+                    rx = Math.max(10, Math.min(25, (w - 300) / 2));
+                    rz = 70;
+                    ry = 5;
+                } else if (isTablet) {
+                    rx = Math.max(120, Math.min(220, (w - 340) / 2));
+                    rz = rx * 0.5;
+                    ry = 10;
+                } else {
+                    rx = Math.max(220, Math.min(420, (w - 400) / 2));
+                    rz = rx * 0.45;
+                    ry = 15;
+                }
+                return { rx, rz, ry };
+            }
+
+            function getScrollPositions() {
+                if (!scrollContainer) return { start: 0, end: 0 };
+                const rect = scrollContainer.getBoundingClientRect();
+                const start = rect.top + window.scrollY;
+                const end = start + rect.height - window.innerHeight;
+                return { start, end };
+            }
+
+            function updateCarouselByScroll() {
+                const { start, end } = getScrollPositions();
+                const current = window.scrollY;
+                
+                let progress = 0;
+                if (current > start) {
+                    progress = (current - start) / (end - start);
+                    if (progress > 1) progress = 1;
+                }
+                
+                // Angle spacing between items (in radians)
+                const angleStep = (2 * Math.PI) / totalItems;
+                
+                // Global rotation angle based on scroll progress (0 to -288 degrees in radians)
+                const globalOrbitAngle = -progress * (totalItems - 1) * angleStep;
+                
+                currentIndex = Math.min(totalItems - 1, Math.max(0, Math.round(progress * (totalItems - 1))));
+
+                const { rx, rz, ry } = getOrbitParams();
+                
+                // Static track layer (keeps 3D environment centered)
+                track.style.transform = 'translateZ(0px)';
+
+                items.forEach((item, i) => {
+                    const itemAngle = (i * angleStep) + globalOrbitAngle;
+                    
+                    // Elliptical 3D coordinates
+                    const x = Math.sin(itemAngle) * rx;
+                    const z = Math.cos(itemAngle) * rz;
+                    const y = Math.cos(itemAngle) * ry;
+                    
+                    // Normalize Z range to [0, 1] for relative scaling metrics
+                    const normZ = (z + rz) / (2 * rz); // 1 = front, 0 = back
+                    
+                    // Compute orbit properties
+                    const scale = 0.65 + normZ * 0.35;
+                    const opacity = 0.3 + normZ * 0.7;
+                    const blur = (1 - normZ) * 2;
+                    const zIndex = Math.round(normZ * 100);
+                    const brightness = 0.3 + normZ * 0.7;
+
+                    item.style.transform = `translate3d(${x}px, ${y}px, ${z}px) scale(${scale})`;
+                    item.style.opacity = opacity;
+                    item.style.filter = `brightness(${brightness}) blur(${blur}px)`;
+                    item.style.zIndex = zIndex;
+                    
+                    // Visual styling classes
+                    item.classList.remove('active', 'neighbor');
+                    let diff = Math.abs(i - currentIndex) % totalItems;
+                    if (diff > totalItems / 2) {
+                        diff = totalItems - diff;
+                    }
+                    
+                    if (diff === 0) {
+                        item.classList.add('active');
+                    } else if (diff === 1) {
+                        item.classList.add('neighbor');
+                    }
+                });
+
+                dots.forEach((dot, idx) => {
+                    if (idx === currentIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+
+            // Click dot scrolls page
+            dots.forEach((dot, idx) => {
+                dot.addEventListener('click', () => {
+                    const { start, end } = getScrollPositions();
+                    const targetScroll = start + (idx / (totalItems - 1)) * (end - start);
+                    window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+                });
+            });
+
+            prevBtn.addEventListener('click', () => {
+                const nextIdx = (currentIndex - 1 + totalItems) % totalItems;
+                const { start, end } = getScrollPositions();
+                const targetScroll = start + (nextIdx / (totalItems - 1)) * (end - start);
+                window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+            });
+
+            nextBtn.addEventListener('click', () => {
+                const nextIdx = (currentIndex + 1) % totalItems;
+                const { start, end } = getScrollPositions();
+                const targetScroll = start + (nextIdx / (totalItems - 1)) * (end - start);
+                window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+            });
+
+            // Touch support on track can also scroll page
+            let touchStartY = 0;
+            let scrollStart = 0;
+            
+            track.addEventListener('touchstart', (e) => {
+                touchStartY = e.touches[0].clientY;
+                scrollStart = window.scrollY;
+            }, { passive: true });
+
+            track.addEventListener('touchmove', (e) => {
+                const touchY = e.touches[0].clientY;
+                const diffY = touchStartY - touchY;
+                window.scrollTo(0, scrollStart + diffY);
+            }, { passive: true });
+
+            const container = document.querySelector('.carousel-3d-container');
+            if (container) {
+                container.addEventListener('mouseenter', () => {
+                    const handleKeyDown = (e) => {
+                        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                            e.preventDefault();
+                            const step = e.key === 'ArrowLeft' ? -1 : 1;
+                            const nextIdx = (currentIndex + step + totalItems) % totalItems;
+                            const { start, end } = getScrollPositions();
+                            const targetScroll = start + (nextIdx / (totalItems - 1)) * (end - start);
+                            window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+                        }
+                    };
+                    window.addEventListener('keydown', handleKeyDown);
+                    container.addEventListener('mouseleave', () => {
+                        window.removeEventListener('keydown', handleKeyDown);
+                    }, { once: true });
+                });
+            }
+
+            window.addEventListener('scroll', () => {
+                requestAnimationFrame(updateCarouselByScroll);
+            }, { passive: true });
+
+            window.addEventListener('resize', updateCarouselByScroll);
+            updateCarouselByScroll();
+        })();
+
+        // ─── ACTIVE NAV HIGHLIGHT ─────────────────────────────────────────────────
+        (function () {
+            const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        sections.forEach(id => {
+                            const el = document.getElementById('nav-' + id);
+                            if (el) el.classList.remove('active');
+                        });
+                        const nav = document.getElementById('nav-' + entry.target.id);
+                        if (nav) nav.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.4 });
+            sections.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) observer.observe(el);
+            });
+        })();
+
+        // ─── GLASS CARD 3D TILT ───────────────────────────────────────────────────
+        document.querySelectorAll('.glass-strong').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const r = card.getBoundingClientRect();
+                const x = e.clientX - r.left, y = e.clientY - r.top;
+                const cx = r.width / 2, cy = r.height / 2;
+                const rx = (y - cy) / 30, ry = (cx - x) / 30;
+                card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(900px) rotateX(0) rotateY(0)';
+            });
+        });
+
+        // ─── PROJECT CARD MOUSE GLOW ─────────────────────────────────────────────
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const r = card.getBoundingClientRect();
+                const x = e.clientX - r.left, y = e.clientY - r.top;
+                card.style.setProperty('--mx', x + 'px');
+                card.style.setProperty('--my', y + 'px');
+            });
+        });
+
+        // ─── FORM LABEL FOCUS ────────────────────────────────────────────────────
+        document.querySelectorAll('.form-field input, .form-field textarea, .form-field select').forEach(inp => {
+            inp.addEventListener('focus', () => { inp.previousElementSibling && (inp.previousElementSibling.style.color = '#a4e6ff'); });
+            inp.addEventListener('blur', () => { inp.previousElementSibling && (inp.previousElementSibling.style.color = '#859399'); });
+        });
+
+        // ─── SMOOTH ANCHOR SCROLL ────────────────────────────────────────────────
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+            });
+        });
+
+        // ─── MOBILE MENU TOGGLE ─────────────────────────────────────────────────
+        (function () {
+            const menuBtn = document.getElementById('menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+            if (menuBtn && closeMenuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.remove('translate-x-full');
+                });
+
+                closeMenuBtn.addEventListener('click', () => {
                     mobileMenu.classList.add('translate-x-full');
                 });
-            });
-        }
-    })();
+
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('translate-x-full');
+                    });
+                });
+            }
+        })();
     </script>
 </body>
+
 </html>
